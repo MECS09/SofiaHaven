@@ -1,6 +1,7 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+{{-- styles, meta,head script --}}
+
+<link rel="stylesheet" href="{{asset('')}}css/bootstrap.css">
+<link rel="stylesheet" href="{{asset('')}}css/mdb.css">
+
+<!-- jQuery -->
+<script type="text/javascript" src="{{asset('')}}js/jquery.min.js"></script>
