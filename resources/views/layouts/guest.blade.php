@@ -14,19 +14,25 @@
         {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
         @include('inc.header')
 
+        @yield('styles')
+
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
     <body>
         <div id="preloader">
             <div id="status">&nbsp;</div>
-          </div>
-          
-
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
         </div>
 
+        @include('inc.navbar')
+          
+
+        {{ $slot }}
+
+
+        
+        @include('inc.footer')
         @include('inc.scripts')
+        @yield('scripts')
     </body>
 </html>

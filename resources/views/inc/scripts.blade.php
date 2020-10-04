@@ -7,7 +7,7 @@
  <script type="text/javascript" src="{{asset('')}}js/mdb.min.js"></script>
  {{-- Custom JS --}}
  <script type="text/javascript" src="{{asset('')}}js/main.js"></script>
- <!-- Your custom scripts (optional) -->\
+ <!-- Your custom scripts (optional) -->
 
  <script type="text/javascript">
     $(window).on('load', function() { // makes sure the whole site is loaded 
