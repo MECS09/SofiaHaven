@@ -29,3 +29,29 @@
     margin: -100px 0 0 -100px;
     /* is width and height divided by two */
   }
+  .nav-btn.prev-slide {
+    position: absolute;
+    top: 49%;
+    background: #fff;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    padding: 1%;
+}
+.nav-btn.next-slide {
+  position: absolute;
+  top: 49%;
+  background: #fff;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  padding: 1%;
+  right: 0;
+}
+.slider-featured {
+    background-image: url('../img/bg/featured-bg1.webp');
+    background-size: cover;
+    background-position: left;
+    background-color: #00000011;
+    background-blend-mode: multiply;
+}
