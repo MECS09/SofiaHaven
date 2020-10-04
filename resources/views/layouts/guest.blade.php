@@ -15,9 +15,13 @@
         @include('inc.header')
 
         <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
     <body>
+        <div id="preloader">
+            <div id="status">&nbsp;</div>
+          </div>
+          
 
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
