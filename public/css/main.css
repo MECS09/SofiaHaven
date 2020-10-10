@@ -43,6 +43,9 @@ ul.inline-block li {
 .bg-maroon {
   background: #5b211d!important;
 }
+.border-maroon {
+  border: 2px solid #5b211d!important;
+}
 .bg-lightpink {
   background-color: #f6eceb;
 }
@@ -275,4 +278,7 @@ ul.inline-block li {
 }
 .img-responsive {
   width: 100%;
+}
+img.img-thumbnail {
+  width: 9em;
 }

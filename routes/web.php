@@ -21,6 +21,10 @@ Route::get('/about', function () {
     return view('guest.aboutme');
 })->name('aboutme');
 
+Route::get('/editors-corner', function () {
+    return view('guest.editorscorner');
+})->name('editorscorner');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

@@ -33,7 +33,7 @@
               <i class="fas fa-user"></i> About </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
               <a class="dropdown-item" href="{{route('aboutme')}}">About Me</a>
-              <a class="dropdown-item" href="#">Editor's Corner</a>
+              <a class="dropdown-item" href="{{route('editorscorner')}}">Editor's Corner</a>
             </div>
           </li>
         <li class="nav-item">
