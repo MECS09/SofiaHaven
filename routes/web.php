@@ -15,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('guest.home');
-});
+})->name('home');
+
+Route::get('/about', function () {
+    return view('guest.aboutme');
+})->name('aboutme');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

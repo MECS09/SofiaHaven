@@ -253,46 +253,242 @@
     </div>
 
 
-    <div class="container-fluid">
-        
-
-
-
-        <div class="slider-section p-5">
+    <div class="container-fluid bg-maroon mt-5">
+        <div class="slider-section px-5 pt-5">
             <div class="row justify-content-md-center">
-                <div class="col-sm-8">
+                <div class="col-sm-12">
                     <div class="owl-carousel owl-theme">
                         <div class="item">
                             <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
                             alt="First slide">
+                            <div class="stories-caption py-3">
+                                <h3 class="title text-white">Tipsy in Jeju</h3>
+                                <div class="ratings">
+                                    <div id="full-stars-example">
+                                        <div class="rating-group">
+                                            <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                            <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                            <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                            <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                            <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                </div>
+                            </div>
                         </div>
                         <div class="item">
                             <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
                             alt="First slide">
+                            <div class="stories-caption py-3">
+                                <h3 class="title text-white">Tipsy in Jeju</h3>
+                                <div class="ratings">
+                                    <div id="full-stars-example">
+                                        <div class="rating-group">
+                                            <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                            <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                            <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                            <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                            <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                </div>
+                            </div>
                         </div>
                         <div class="item">
                             <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
                             alt="First slide">
+                            <div class="stories-caption py-3">
+                                <h3 class="title text-white">Tipsy in Jeju</h3>
+                                <div class="ratings">
+                                    <div id="full-stars-example">
+                                        <div class="rating-group">
+                                            <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                            <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                            <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                            <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                            <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                </div>
+                            </div>
                         </div>
                         <div class="item">
                             <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
                             alt="First slide">
+                            <div class="stories-caption py-3">
+                                <h3 class="title text-white">Tipsy in Jeju</h3>
+                                <div class="ratings">
+                                    <div id="full-stars-example">
+                                        <div class="rating-group">
+                                            <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                            <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                            <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                            <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                            <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                </div>
+                            </div>
                         </div>
                         <div class="item">
                             <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
                             alt="First slide">
+                            <div class="stories-caption py-3">
+                                <h3 class="title text-white">Tipsy in Jeju</h3>
+                                <div class="ratings">
+                                    <div id="full-stars-example">
+                                        <div class="rating-group">
+                                            <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                            <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                            <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                            <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                            <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                </div>
+                            </div>
                         </div>
                         <div class="item">
                             <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
                             alt="First slide">
+                            <div class="stories-caption py-3">
+                                <h3 class="title text-white">Tipsy in Jeju</h3>
+                                <div class="ratings">
+                                    <div id="full-stars-example">
+                                        <div class="rating-group">
+                                            <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                            <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                            <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                            <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                            <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                </div>
+                            </div>
                         </div>
                         <div class="item">
                             <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
                             alt="First slide">
+                            <div class="stories-caption py-3">
+                                <h3 class="title text-white">Tipsy in Jeju</h3>
+                                <div class="ratings">
+                                    <div id="full-stars-example">
+                                        <div class="rating-group">
+                                            <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                            <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                            <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                            <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                            <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                </div>
+                            </div>
                         </div>
                         <div class="item">
                             <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
                             alt="First slide">
+                            <div class="stories-caption py-3">
+                                <h3 class="title text-white">Tipsy in Jeju</h3>
+                                <div class="ratings">
+                                    <div id="full-stars-example">
+                                        <div class="rating-group">
+                                            <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                            <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                            <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                            <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                            <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                            <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                    
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                </div>
+                            </div>
                         </div>
                         
                     </div>
@@ -319,7 +515,7 @@
                         items:3
                     },
                     1000:{
-                        items:3
+                        items:5
                     }
                 }
             })
