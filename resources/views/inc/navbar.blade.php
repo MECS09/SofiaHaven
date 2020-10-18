@@ -14,7 +14,7 @@
 </div>
 
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
+<nav class="mb-1 navbar navbar-expand-lg #ffebee red lighten-5 info-color">
     <a class="navbar-brand" href="#">SOFIA</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
       aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
