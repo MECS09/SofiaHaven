@@ -27,12 +27,13 @@
   font-size: 2em!important;
   text-align: center;
 }
+
 .section-header h1 {
   font-family: 'Afternoon';
 }
 
 h1 {
-  font-family: 'Agatha';
+  font-family: 'adelline_personal';
 }
 
 
@@ -86,6 +87,8 @@ ul.inline-block li {
 .bg-lightpink {
   background-color: #f6eceb;
 }
+
+
 .nav-btn.prev-slide {
     position: absolute;
     top: 49%;

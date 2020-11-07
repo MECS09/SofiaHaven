@@ -68,7 +68,7 @@ body,html{
             </div>
 
 <!-- Modal -->
-                                <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                <div class="modal fade center" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -81,7 +81,6 @@ body,html{
                                     <div class="modal-body">
                                         Name: Sofia Haven<br>
                                         Number: 09999999999<br>
-                                        Amount: 1000.00php<br>
 
 
                                     </div>

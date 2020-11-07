@@ -9,7 +9,7 @@
                 </div>
               </form>
         </li>
-        <li><a href="#">login</a></li>
+        <li><a href="{{route('login')}}">login</a></li>
     </ul>
 </div>
 

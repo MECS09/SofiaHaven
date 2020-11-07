@@ -1,4 +1,3 @@
-
 <x-guest-layout>
     @section('styles')
         <link rel="stylesheet" href="{{asset('')}}plugins/owl/owlcarousel/assets/owl.carousel.css">
@@ -83,6 +82,7 @@
         </div>
         <!--/.Carousel Wrapper-->
     </div>
+
     <div class="author-welcome relative my-5">
         <div class="container">
             <div class="row justify-content-lg-center">
@@ -96,6 +96,8 @@
             </div>
         </div>
     </div>
+
+
     <div class="trending-stories">
         <div class="container">
             <h1>Featured Stories</h1>
@@ -521,4 +523,5 @@
             })
         </script>
     @endsection
+    
 </x-guest-layout>
