@@ -9,12 +9,61 @@
                 </div>
               </form>
         </li>
-        <li>
-          <a class="text-white" href="#login" data-toggle="modal" >Login</a>
-        </li>
-        <li>
-          <a class="text-white" href="#register" data-toggle="modal" >Register</a>
-        </li>
+        @if (Route::has('login'))
+                @auth
+                    {{-- <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a> --}}
+                    {{-- @livewire('navigation-dropdown') --}}
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            
+                          <img class="rounded-circle nav-p-img" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            
+                        @else
+                          {{ Auth::user()->name }}
+                            
+                        @endif
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                        aria-labelledby="navbarDropdownMenuLink-333">
+                        <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
+                        <a class="dropdown-item" href="{{ route('profile.show') }}">{{ __('Profile') }}</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                          @csrf
+
+                          <a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                      this.closest('form').submit();">
+                              {{ __('Logout') }}</a>
+                      </form>
+                      </div>
+                    </li>
+                @else
+                <li>
+                                    
+                  @if (\Request::is('login', 'register')) 
+                  <a class="text-white" href="{{route('login')}}">Login</a>
+                   
+                  @else
+                    <a class="text-white" href="#login" data-toggle="modal" >Login</a>
+                  @endif
+                </li>
+                    @if (Route::has('register'))
+                        
+                    <li>
+                      
+                      @if (\Request::is('login', 'register'))  
+                      <a class="text-white" href="{{route('register')}}">Register</a>
+                      
+                      @else
+                      <a class="text-white" href="#register" data-toggle="modal" >Register</a>
+                      @endif
+                    </li>
+                    @endif
+                @endif
+        @endif
+        
         
     </ul>
 </div>

@@ -69,5 +69,14 @@ Route::get('/contact', function () {
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    
+    if(auth()->user()->accesslevel=='admin') {
+        return view('dashboard');
+    }
+    else {
+        return redirect()->route('home');
+    }
+
 })->name('dashboard');
+
+

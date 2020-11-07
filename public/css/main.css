@@ -118,6 +118,15 @@ ul.inline-block li {
 .b-maroon {
   border: 1px solid #5b211d!important;
 }
+.nav-p-img {
+  max-height: 2.7em!important;
+}
+.middle {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(40%);
+}
 .slider-featured {
     background-image: url('../img/bg/featured-bg1.webp');
     background-size: cover;
