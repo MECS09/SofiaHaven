@@ -71,9 +71,11 @@ Route::get('/contact', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     
     if(auth()->user()->accesslevel=='admin') {
+        // if user is not an admin they dont have access to the dashboard instead they will redirected to certain page/view that would be their dashboard
         return view('dashboard');
     }
     else {
+        //indicate which view/route should the normal user need to be redirected
         return redirect()->route('home');
     }
 
