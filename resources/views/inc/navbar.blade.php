@@ -1,17 +1,20 @@
 <div class="topbar bg-maroon text-right">
     <ul class="inline-block">
-        <li><a href="#">Guest Writers and Contributor</a></li>
-        <li><a href="#">Community</a></li>
+        <li><a class="text-white" href="#">Guest Writers and Contributor</a></li>
+        <li><a class="text-white" href="#">Community</a></li>
         <li>
             <form class="form-inline">
                 <div class="md-form my-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                  <input class="form-control px-3 my-1 rounded-pill bg-white" type="text" placeholder="Search" aria-label="Search">
                 </div>
               </form>
         </li>
-        <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
-          login
-        </button></li>
+        <li>
+          <a class="text-white" href="#login" data-toggle="modal" >Login</a>
+        </li>
+        <li>
+          <a class="text-white" href="#register" data-toggle="modal" >Register</a>
+        </li>
         
     </ul>
 </div>

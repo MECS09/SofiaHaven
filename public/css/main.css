@@ -32,7 +32,7 @@
   font-family: 'Afternoon';
 }
 
-h1 {
+h1, .title {
   font-family: 'adelline_personal';
 }
 
@@ -44,6 +44,9 @@ ul.inline-block li {
   display: inline-block;
   padding-right: 15px;
   padding-left: 15px;
+}
+.topbar, .topbar input {
+  font-size: 10pt;
 }
 
 /* Preloader */
@@ -107,6 +110,13 @@ ul.inline-block li {
   height: 40px;
   padding: 1%;
   right: 0;
+}
+.modal {
+  padding-right: 0 !important;
+  background: #5b211dd1!important;
+}
+.b-maroon {
+  border: 1px solid #5b211d!important;
 }
 .slider-featured {
     background-image: url('../img/bg/featured-bg1.webp');
