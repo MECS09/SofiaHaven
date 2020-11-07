@@ -1,6 +1,6 @@
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
 
   <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->

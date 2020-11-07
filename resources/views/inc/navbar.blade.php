@@ -9,7 +9,10 @@
                 </div>
               </form>
         </li>
-        <li><a href="{{route('login')}}">login</a></li>
+        <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
+          login
+        </button></li>
+        
     </ul>
 </div>
 
