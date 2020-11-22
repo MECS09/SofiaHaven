@@ -26,6 +26,10 @@ Route::get('/about', function () {
     return view('guest.aboutme');
 })->name('aboutme');
 
+Route::get('/singlepage', function () {
+    return view('guest.story_details');
+})->name('story');
+
 Route::get('/editors-corner', function () {
     return view('guest.editorscorner');
 })->name('editorscorner');
