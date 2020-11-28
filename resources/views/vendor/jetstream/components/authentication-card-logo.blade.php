@@ -5,5 +5,6 @@
     </svg>
 </a> --}}
 
-<h1>Sofia Haven</h1>
+
+<img class="img-responsive" src="{{asset('img/logo/Sofia-Pink_logo.png')}}" alt="Sofia haven Logo">
 

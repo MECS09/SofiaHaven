@@ -49,8 +49,8 @@ body,html{
                         <div class="col-md-10 ">
 
                             <!-- Heading -->
-                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2" style="font-family:afternoon;">SofiaHaven</h2>
-
+                            
+                            <img class="img-responsive"  src="{{asset('img/logo/Sofia-Pink_logo.png')}}" alt="Sofia haven Logo">
                             <!-- Divider -->
                             <hr class="hr-light">
 

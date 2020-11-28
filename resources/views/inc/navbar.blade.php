@@ -69,10 +69,10 @@
 </div>
 
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
+<nav class="mb-1 navbar navbar-expand-lg navbar-light bg-white">
     <a class="navbar-brand pl-md-4 pl-sm-0" href="#">
       {{-- <img src="{{asset('img')}}/logo/sofia_logo.png" class="img-logo" alt=""> --}}
-      Sofia
+      <img class="img-responsive img-logo"  src="{{asset('img/logo/Sofia-Pink_logo.png')}}" alt="Sofia haven Logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
       aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,42 +81,42 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{{route('home')}}">
+          <a class="nav-link hvr-underline-from-left" href="{{route('home')}}">
             <i class="fas fa-home"></i> Home
           </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle hvr-underline-from-left" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user"></i> About </a>
+              <i class="far fa-address-card"></i> About </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-              <a class="dropdown-item" href="{{route('aboutme')}}">About Me</a>
-              <a class="dropdown-item" href="{{route('editorscorner')}}">Editor's Corner</a>
+              <a class="dropdown-item hvr-underline-from-left" href="{{route('aboutme')}}">About Me</a>
+              <a class="dropdown-item hvr-underline-from-left" href="{{route('editorscorner')}}">Editor's Corner</a>
             </div>
         </li>
         <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+              <a class="nav-link dropdown-toggle hvr-underline-from-left" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user"></i> Stories </a>
+                <i class="fas fa-book"></i> Stories </a>
               <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                <a class="dropdown-item" href="{{route('standalone')}}">Stand Alone</a>
-                <a class="dropdown-item" href="{{route('series')}}">Series</a>
+                <a class="dropdown-item hvr-underline-from-left" href="{{route('standalone')}}">Stand Alone</a>
+                <a class="dropdown-item hvr-underline-from-left" href="{{route('series')}}">Series</a>
               </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+          <a class="nav-link dropdown-toggle hvr-underline-from-left" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user"></i> Blog </a>
+            <i class="fas fa-route"></i> Blog </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-            <a class="dropdown-item" href="{{route('travel-and-leisure')}}">Travel & Leisure</a>
-            <a class="dropdown-item" href="{{route('events')}}">Events</a>
-            <a class="dropdown-item" href="{{route('writing-tips')}}">Writing Tips</a>
-            <a class="dropdown-item" href="{{route('random-thoughts')}}">Random Thoughts</a>
-            <a class="dropdown-item" href="{{route('how-to-earn')}}">How to Earn</a>
+            <a class="dropdown-item hvr-underline-from-left" href="{{route('travel-and-leisure')}}">Travel & Leisure</a>
+            <a class="dropdown-item hvr-underline-from-left" href="{{route('events')}}">Events</a>
+            <a class="dropdown-item hvr-underline-from-left" href="{{route('writing-tips')}}">Writing Tips</a>
+            <a class="dropdown-item hvr-underline-from-left" href="{{route('random-thoughts')}}">Random Thoughts</a>
+            <a class="dropdown-item hvr-underline-from-left" href="{{route('how-to-earn')}}">How to Earn</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('contact')}}">
+          <a class="nav-link hvr-underline-from-left" href="{{route('contact')}}">
             <i class="fas fa-phone"></i> Contact me</a>
         </li>
       </ul>
