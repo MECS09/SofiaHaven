@@ -66,7 +66,7 @@
 
                         <!-- Description -->
                         <h4 class="white-text my-4">Please be informed that SofiaHaven Website is under maintenance.</h4>
-                        <button type="button" class="btn btn-outline-white" data-toggle="modal" data-target="#basicExampleModal">Want to donate a coffee?<i class="fa fa-coffee ml-2"></i> Click here!</button>
+                        <button type="button" class="btn btn-outline-white" data-toggle="modal" data-target="#basicExampleModal">Inspire our writers more! Buy us Milktea! We appriciate your support.<i class="fa fa-coffee ml-2"></i> Click here!</button>
                             
     
                     </div>
@@ -78,8 +78,7 @@
         </div>
 
 <!-- Modal -->
-                            <div class="modal fade center" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
+                    <div class="modal fade center" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -89,8 +88,8 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    Name: Sofia Haven<br>
-                                    Number: 09999999999<br>
+                                    Name: Jernalie Dumapay<br>
+                                    Number: (+63) 9179494680<br>
 
 
                                 </div>

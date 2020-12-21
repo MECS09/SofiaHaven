@@ -6,5 +6,5 @@
 </a> --}}
 
 
-<img class="img-responsive" src="{{asset('img/logo/Sofia-Pink_logo.png')}}" alt="Sofia haven Logo">
+<img class="img-responsive" style="width: 50%" src="{{asset('img/logo/Sofia-Pink_logo.png')}}" alt="Sofia haven Logo">
 

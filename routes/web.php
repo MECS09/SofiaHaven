@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StoryController;
+use App\Http\Controllers\ChapterController;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +29,6 @@ Route::get('/home', function () {
 Route::get('/about', function () {
     return view('guest.aboutme');
 })->name('aboutme');
-
-Route::get('/singlepage', function () {
-    return view('guest.story_details');
-})->name('story');
 
 Route::get('/editors-corner', function () {
     return view('guest.editorscorner');
@@ -71,6 +71,26 @@ Route::get('/contact', function () {
 
 
 
+Route::get('/story-list', function () {
+    return view('writer.story-list');
+})->name('story-list');
+
+Route::get('/Add-new-book', function () {
+    return view('writer.create-book');
+})->name('create-new-book');
+
+
+Route::get('/Add-new-chapter', function () {
+    return view('writer.create-new-chapter');
+})->name('create-new-chapter');
+
+// Route::resource('story_list', 'StoryController', [
+//     'names' => [
+//         'index' => 'new_story'
+//     ]
+// ]);
+
+// Route::get('story_list', [StoryController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     
@@ -84,5 +104,35 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     }
 
 })->name('dashboard');
+
+
+
+Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
+
+    // return ('admin');
+//     // $user = Auth::user();
+    
+        Route::resource('/story-list', StoryController::class, [
+            'names' => [
+                'index' => 'book.list',
+                'create' => 'book.create',
+                'show' => 'book.show',
+                'edit' => 'book.edit',
+                'update' => 'book.update',
+            ]
+        ]);
+        Route::post('/courses/store', [StoryController::class, 'store'])->name('book.store');
+        
+        
+        Route::resource('/chapter-list', ChapterController::class, [
+            'names' => [
+                'index' => 'chapter.list',
+                'create' => 'chapter.create',  
+                'show' => 'chapter.show' 
+            ]
+        ]);
+        Route::post('/chapter/store', [ChapterController::class, 'store'])->name('chapter.store');
+    
+});
 
 

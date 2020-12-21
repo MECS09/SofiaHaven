@@ -46,6 +46,16 @@
   padding-left: 3px;
   color: #5b211d;
 }
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  background-color: #f6eceb;
+}
+.tab-content > .active {
+  background: #f6eceb;
+  padding: 20px;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  border-color: #f6eceb #f6eceb #f6eceb;
+}
 .section-header h1 {
   font-family: 'Afternoon';
 }
@@ -340,4 +350,7 @@ img.img-logo {
   top: 50%;
   height: 100px;
   margin-top: -50px;
+}
+.bootstrap-tagsinput .badge {
+  margin: 2px 5px!important;
 }

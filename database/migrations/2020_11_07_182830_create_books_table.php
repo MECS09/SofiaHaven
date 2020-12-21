@@ -22,8 +22,8 @@ class CreateBooksTable extends Migration
             $table->string('privacy')->default('public');
             $table->string('publish')->default('publish');
             $table->string('editors')->nullable();
-            $table->string('description')->nullable();
-            $table->string('genre')->nullable();
+            $table->longText('description')->nullable();
+            $table->longText('genre')->nullable();
             $table->string('type')->default('standalone');
             $table->foreignId('series_id')->nullable();
             $table->string('series_title')->nullable();

@@ -19,11 +19,11 @@ class CreateBookStoriesTable extends Migration
             $table->string('story_name');
             $table->string('chapter');
             $table->string('media')->nullable();
-            $table->string('media_desc')->nullable();
+            $table->longText('media_desc')->nullable();
             $table->string('rated');
             $table->string('privacy')->default('public');
             $table->string('publish')->default('publish');
-            $table->string('content')->nullable();
+            $table->longText('content')->nullable();
             $table->string('reads')->nullable();
             $table->string('comments')->nullable();
             $table->string('order')->nullable();

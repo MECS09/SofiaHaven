@@ -12,13 +12,21 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        @include('inc.header')
 
         @livewireStyles
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
+        @yield('styles')
+
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
     <body class="font-sans antialiased">
+        <div id="preloader">
+            <div id="status">&nbsp;</div>
+        </div>
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-dropdown')
 
@@ -38,5 +46,9 @@
         @stack('modals')
 
         @livewireScripts
+        
+        @include('inc.footer')
+        @include('inc.scripts')
+        @yield('scripts')
     </body>
 </html>
