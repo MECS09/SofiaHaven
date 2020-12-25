@@ -83,7 +83,8 @@
                                 {{-- <td class="align-middle">{{$author->name}}</td> --}}
                                 <td class="align-middle">{{$data->rated}}</td>
                                 <td class="align-middle">{{$data->privacy}}</td>
-                                <td class="align-middle">{{$data->publish}}</td>
+                                <td class="align-middle">{{$d
+                                ata->publish}}</td>
                                 <td class="align-middle">{{$data->type}}</td>
                                 <td class="align-middle" class="text-center">
                                     <a href="#" class="btn btn-primary  btn-block">View</a> <br><br>
