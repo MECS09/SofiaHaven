@@ -62,8 +62,20 @@
                         @method('PUT')
                         @csrf
                         <!-- Name -->
-                        <input type="text" id="book-title" value="{{$book->title}}"  name="book-title" class="form-control mb-4" placeholder="Title">
+                        
+                        <div class="form-group row align-items-center">
+                            <div class="form-outline col-8">
+                                <input type="text" id="book-title" value="{{$book->title}}"  name="book-title" class="form-control mb-4" placeholder="Title">
 
+                            </div>
+                            <div class="col-4">
+                                <input type="checkbox" class="form-control" @if ($book->featured == 1) checked
+                                    
+                                @endif data-toggle="toggle" data-size="mini" name="featured" data-on="Featured" data-off="Not featured">
+                            </div>
+                        
+                            
+                        </div>
                         
                         <!-- Upload image input-->
                         <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
@@ -113,7 +125,9 @@
                         <!-- Description -->
                         <label>Description</label>
                         <div class="form-group">
-                            <textarea class="form-control rounded-0 ckeditor" value="{{$book->description}}" name="book-description" id="exampleFormControlTextarea2" rows="3" placeholder="Description"></textarea>
+                            <textarea class="form-control rounded-0 ckeditor" name="book-description" id="exampleFormControlTextarea2" rows="3" placeholder="Description">
+                                {{$book->description}}
+                            </textarea>
                         </div>
 
 
@@ -134,9 +148,9 @@
                             <!-- Subject -->
                             <label>Series Title</label>
                             <select class="browser-default custom-select mb-4" name="series-id" id="type">
-                                <option value="" disabled>Choose option</option>
-                                <option value="1">Stallion 1</option>
-                                <option value="2" selected>Stallion 2</option>
+                                <option value="" disabled selected>Choose option</option>
+                                <option value="0">This is the cover story</option>
+                                {{-- <option value="2" selected>Stallion 2</option> --}}
                             </select>
 
                         </div>

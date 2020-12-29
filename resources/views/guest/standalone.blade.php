@@ -2,16 +2,16 @@
     <div class="container mt-5">
         <h1 class="text-center">Stand Alone</h1>
         <hr>
-        <div class="d-flex justify-content-center h-100">
+        {{-- <div class="d-flex justify-content-center h-100">
             <div class="searchbar">
               <input class="search_input" type="text" name="" placeholder="Search Series...">
               <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
             </div>
-          </div>
+        </div> --}}
         <div class="row">
             
             <div class="col-md-3 my-5">
-                <a href="{{route('story')}}" class="text-dark">
+                <a href="#" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
                     </div>
@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div class="col-md-3 my-5">
-                <a href="{{route('story')}}" class="text-dark">
+                <a href="#" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
                     </div>
@@ -47,7 +47,7 @@
                 </a>
             </div>
             <div class="col-md-3 my-5">
-                <a href="{{route('story')}}" class="text-dark">
+                <a href="#" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
                     </div>
@@ -65,7 +65,7 @@
                 </a>
             </div>
             <div class="col-md-3 my-5">
-                <a href="{{route('story')}}" class="text-dark">
+                <a href="#" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
                     </div>
@@ -83,7 +83,7 @@
                 </a>
             </div>
             <div class="col-md-3 my-5">
-                <a href="{{route('story')}}" class="text-dark">
+                <a href="#" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
                     </div>
@@ -101,7 +101,7 @@
                 </a>
             </div>
             <div class="col-md-3 my-5">
-                <a href="{{route('story')}}" class="text-dark">
+                <a href="#" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
                     </div>
@@ -119,7 +119,7 @@
                 </a>
             </div>
             <div class="col-md-3 my-5">
-                <a href="{{route('story')}}" class="text-dark">
+                <a href="#" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
                     </div>
@@ -137,7 +137,7 @@
                 </a>
             </div>
             <div class="col-md-3 my-5">
-                <a href="{{route('story')}}" class="text-dark">
+                <a href="#" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
                     </div>

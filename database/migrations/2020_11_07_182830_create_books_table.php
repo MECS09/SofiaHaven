@@ -20,7 +20,8 @@ class CreateBooksTable extends Migration
             $table->string('author');
             $table->string('rated');
             $table->string('privacy')->default('public');
-            $table->string('publish')->default('publish');
+            $table->string('status')->default('draft');
+            $table->boolean('featured')->default(0);
             $table->string('editors')->nullable();
             $table->longText('description')->nullable();
             $table->longText('genre')->nullable();

@@ -30,6 +30,7 @@ class StoryController extends Controller
     {
         $books = Book::all();
         
+        
         return view('writer.story-list', compact('books'));
     }
 
@@ -40,7 +41,8 @@ class StoryController extends Controller
      */
     public function create()
     {
-        return view('writer.create-book');
+        $series = Book::where('series_id', 0)->get();
+        return view('writer.create-book', compact('series'));
     }
 
     /**
@@ -51,13 +53,13 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->input('book-genre');
 
         $this->validate($request,[
             'book-title' => 'required',
             'book_cover' => 'required|image|mimes:jpeg,png,PNG,jpg,gif,svg|max:2048'
         ]);
-
+        
+        
         
         $coverimage = $_FILES['book_cover']['name'] .'_'. auth()->user()->id  .'_'. time().'.'.$request->book_cover->extension();  
         $request->book_cover->move(public_path('img/book-cover'), $coverimage);
@@ -65,6 +67,9 @@ class StoryController extends Controller
         $book = new Book();
         $book->title = $request->input('book-title');
         $book->cover = $coverimage;
+        if($request->input('featured') == 'on') {
+            $book->featured = 1;
+        }
         $book->author = auth()->user()->id;
         $book->rated = $request->input('book-audience-rate');
         $book->privacy = $request->input('book-status');
@@ -72,15 +77,21 @@ class StoryController extends Controller
         $book->genre = $request->input('book-genre');
         $book->type = $request->input('book-type');
 
+        
         if($request->input('book-type') == 'series') {
             
             $book->series_id = $request->input('series-id');
             
-            $series_title = Book::where('id', 'series-id')->get();
-            
-            $book->series_title = $series_title->title;
+            if($book->series_id == 0) {
+                $series_title = null;
+            }
+            else {
+                $series = Book::where('id', 'series-id')->get();
+                $series_title = $series->title;
+            }
+            $book->series_title = $series_title;
         }
-
+        
         
         $book->save();
 
@@ -154,6 +165,9 @@ class StoryController extends Controller
             $book->cover = $coverimage;
 
         }
+        if($request->input('featured') == 'on') {
+            $book->featured = 1;
+        }
         $book->author = auth()->user()->id;
         $book->rated = $request->input('book-audience-rate');
         $book->privacy = $request->input('book-status');
@@ -165,12 +179,15 @@ class StoryController extends Controller
             
             $book->series_id = $request->input('series-id');
             
-            $series_title = Book::where('id', 'series-id')->get();
-            
-            $book->series_title = $series_title->title;
+            if($book->series_id == 0) {
+                $series_title = null;
+            }
+            else {
+                $series = Book::where('id', 'series-id')->get();
+                $series_title = $series->title;
+            }
+            $book->series_title = $series_title;
         }
-
-        
         $book->save();
 
         return redirect()->route('book.list')->with('success', 'Story Added');

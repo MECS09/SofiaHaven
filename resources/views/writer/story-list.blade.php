@@ -17,7 +17,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     @include('inc.alert')
-                        <a class="btn btn-primary" href="{{route('create-new-book')}}"> Create New Book </a>
+                        <a class="btn btn-primary" href="{{route('book.create')}}"> Create New Book </a>
     
                         @if (count($books) > 0)
                             

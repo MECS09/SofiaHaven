@@ -61,23 +61,24 @@ class ChapterController extends Controller
     {
 
         $this->validate($request,[
-            'chapter-title' => 'required',
-            'chapter_cover' => 'required|image|mimes:jpeg,png,PNG,jpg,gif,svg|max:2048'
+            'chapter-title' => 'required'
         ]);
         
         
-        $chapterimage = $_FILES['chapter_cover']['name'] .'_'. auth()->user()->id .'_'. time().'.'.$request->chapter_cover->extension();  
         
+
         
-        
-        $request->chapter_cover->move(public_path('img/book-cover/chapter_cover'), $chapterimage);
      
 
         $book_story = new Book_story;
         $book_story->story_id = $request->input('story_id');
         $book_story->story_name = $request->input('story_name');
         $book_story->chapter = $request->input('chapter-title');
-        $book_story->media =  $chapterimage;
+        if($request->input('chapter_cover') == !null) {
+            $chapterimage = $_FILES['chapter_cover']['name'] .'_'. auth()->user()->id .'_'. time().'.'.$request->chapter_cover->extension();  
+            $request->chapter_cover->move(public_path('img/book-cover/chapter_cover'), $chapterimage);
+            $book_story->media =  $chapterimage;
+        }
         $book_story->media_desc = $request->input('chapter-description');
         $book_story->rated = $request->input('chapter-audience-rate');
         $book_story->privacy = $request->input('chapter-status');
@@ -96,9 +97,15 @@ class ChapterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        return '123';
+        $request->input('book');
+        $request->input('chapter');
+        $chapter = Book_story::find($id);
+        $book_next = Book_story::where('story_id', $chapter->story_id)->where('id', '>', $id)->first();
+        $book_prev = Book_story::where('story_id', $chapter->story_id)->where('id', '<', $id)->first();
+        // return $book;
+        return view('guest.single_chapter', compact('chapter','book_next','book_prev'));
     }
 
     /**

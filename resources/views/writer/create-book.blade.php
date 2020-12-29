@@ -2,6 +2,8 @@
 <x-app-layout>
     @section('styles')
     <link rel="stylesheet" href="{{asset('css/addons/tagsinput.css')}}">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap2-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <style>
     
     #upload {
@@ -58,7 +60,16 @@
                     <form class="p-5" action="{{route('book.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <!-- Name -->
-                        <input type="text" id="book-title" name="book-title" class="form-control mb-4" placeholder="Title">
+                        <div class="form-group row align-items-center">
+                            <div class="form-outline col-8">
+                                <input type="text" id="book-title" name="book-title" class="form-control mb-4" placeholder="Title">
+                            </div>
+                            <div class="col-4">
+                                <input type="checkbox" class="form-control" data-toggle="toggle" data-size="mini" name="featured" data-on="Featured" data-off="Not featured">
+                            </div>
+                        
+                            
+                        </div>
 
                         
                         <!-- Upload image input-->
@@ -122,12 +133,19 @@
                             <!-- Subject -->
                             <label>Series Title</label>
                             <select class="browser-default custom-select mb-4" name="series-id" id="type">
-                                <option value="" disabled>Choose option</option>
-                                <option value="1">Stallion 1</option>
-                                <option value="2" selected>Stallion 2</option>
+                                <option value="" disabled selected>Choose option</option>
+                                <option value="Cover">This is the cover story</option>
+                                {{-- <option value="2" selected>Stallion 2</option> --}}
+                                @if ($series->count() > 0)
+                                    @foreach ($series as $item)
+                                        <option value="{{$item->id}}">{{$item->title}}</option>
+                                    @endforeach
+                                @endif
                             </select>
                         </div>
+
                         <!-- Send button -->
+                        
                         <button class="btn btn-info btn-block" type="submit">Submit</button>
 
                     </form>
@@ -146,8 +164,8 @@
                 $('.ckeditor').ckeditor();
             });
         </script>
+        
         <script>
-            
             $(document).ready(function() {
                 $('#story_table').DataTable();
             } );

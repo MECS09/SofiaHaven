@@ -19,8 +19,20 @@
 
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        {{-- <script type="text/javascript">  </script> --}}
     </head>
-    <body>
+    <body oncopy="return false" oncut="return false" onpaste="return false">
+        
+        <div class="d-none">
+            
+            <img id="imgCap" src="{{asset('img/logo/Sofia-Pink_logo.png')}}"/>
+            <div id="copyable">
+                <img src="{{asset('img/logo/Sofia-Pink_logo.png')}}" alt="Copy Image to Clipboard via Javascript."/>
+            </div>
+            <div class="copyable">
+                <img src="{{asset('img/logo/Sofia-Pink_logo.png')}}" alt="Copy Image to Clipboard via Javascript."/>
+            </div>
+        </div>
         <div id="preloader">
             <div id="status">&nbsp;</div>
         </div>

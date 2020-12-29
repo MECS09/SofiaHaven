@@ -7,66 +7,73 @@
     <div class="slider-featured py-5">
         <!--Carousel Wrapper-->
         <div id="carousel-example-1z" class="carousel slide carousel-slide" data-ride="carousel">
-            <!--Indicators-->
+            {{-- <!--Indicators-->
             <ol class="carousel-indicators">
             <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-1z" data-slide-to="1"></li>
             <li data-target="#carousel-example-1z" data-slide-to="2"></li>
             </ol>
-            <!--/.Indicators-->
+            <!--/.Indicators--> --}}
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
-            <!--First slide-->
+
+            @if ($featured_books->count() > 0)
+                
+                @foreach ($featured_books as $key => $books)
+                    
+                    <div class="carousel-item @if ($key === 0) active @endif">
+                        <div class="row justify-content-md-center">
+                            <div class="col-sm-3 p-4">
+                            <img class="d-block w-100 featured-book-cover" src="{{asset('/img/book-cover') .'/'. $books->cover}}" alt="First slide">
+                            </div>
+                            <div class="col-sm-6 relative">
+                                <div class="featured-content-holder">
+                                    
+                                    <div class="text-center">
+                                        <h1 class="title">{{$books->title}}</h1>
+                                        @php
+                                            $str = $books->description;
+                                            echo html_entity_decode($str, ENT_QUOTES); // Converts double and single quotes
+                                        @endphp
+                                        <h6 class="genre" data-value>{{$books->genre}}</h6>
+
+                                    
+                                        <div class="writer">
+                                            @php
+                                                $author = DB::table('users')->where('id',$books->author)->first();
+                                            @endphp
+                                            <h5 class="text-center">By: {{$author->name}}</h5>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                
+            @else
             <div class="carousel-item active">
-               <div class="row justify-content-md-center">
-                   <div class="col-sm-3 p-4">
+                <div class="row justify-content-md-center">
+                    <div class="col-sm-3 p-4">
                     <img class="d-block w-100 featured-book-cover" src="{{asset('')}}img/book cover/placeholder1.jpg" alt="First slide">
-                   </div>
-                   <div class="col-sm-6 relative">
-                       <div class="featured-content-holder">
-                           
+                    </div>
+                    <div class="col-sm-6 relative">
+                        <div class="featured-content-holder">
+                            
                             <h3 class="text-center">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, rerum? Doloremque voluptates quisquam amet quo veritatis fugiat architecto repellat. Pariatur assumenda ex temporibus saepe ea, illo placeat! Quaerat, obcaecati odio.
+                                This is a dummy data, No Storries to be featured at the moment
                             </h3>
-                       </div>
-                   </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            @endif
+
+            <!--First slide-->
+            
             <!--/First slide-->
-            <!--Second slide-->
-            <div class="carousel-item">
-                <div class="row justify-content-md-center">
-                    <div class="col-sm-3 p-4">
-                     <img class="d-block w-100 featured-book-cover" src="{{asset('')}}img/book cover/placeholder1.jpg" alt="First slide">
-                    </div>
-                    <div class="col-sm-6 relative">
-                        <div class="featured-content-holder">
-                            
-                        <h3 class="text-center">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae excepturi natus incidunt, molestias impedit officiis quis dolorem reprehenderit amet exercitationem, delectus rerum non. Ipsum ullam veritatis, nobis cupiditate minima recusandae.
-                        </h3>
-                        </div>
-                    </div>
-                </div>
-             </div>
-            <!--/Second slide-->
-            <!--Third slide-->
-            <div class="carousel-item">
-                <div class="row justify-content-md-center">
-                    <div class="col-sm-3 p-4">
-                     <img class="d-block w-100 featured-book-cover" src="{{asset('')}}img/book cover/placeholder1.jpg" alt="First slide">
-                    </div>
-                    <div class="col-sm-6 relative">
-                        <div class="featured-content-holder">
-                            
-                        <h3 class="text-center">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, repudiandae quam asperiores vel numquam id dolor eos aliquid libero adipisci, soluta magnam nemo expedita voluptatibus dolorum animi velit minus distinctio?
-                        </h3>
-                        </div>
-                    </div>
-                </div>
-             </div>
-            <!--/Third slide-->
             </div>
             <!--/.Slides-->
             <!--Controls-->
@@ -89,8 +96,8 @@
                 <div class="col-sm-10 text-center relative">
                     <div class="welcome-note p-5 ">
                         <h1>Hi this is <i>Sofia</i></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis unde facere reprehenderit odit harum aliquid cumque voluptatem omnis ea similique facilis nam, sit, praesentium repellendus doloremque aliquam deleniti illo error.</p>
-                        <a href="#" class="btn rounded-10 bg-maroon text-white">Start Reading</a>
+                        <p>Welcome to so Sofia The Romatic Traveler</p>
+                        {{-- <a href="#" class="btn rounded-10 bg-maroon text-white">Start Reading</a> --}}
                     </div>
                 </div>
             </div>
@@ -102,90 +109,40 @@
         <div class="container">
             <h1>Featured Stories</h1>
             <div class="story-list mt-5  pt-5">
-                <div class="row bg-lightpink py-5 justify-content-lg-center mt-3">
-                    <div class="col-sm-3">
-                        <img class="d-block w-100 stories-book-cover p-10" src="{{asset('')}}img/book cover/placeholder1.jpg" alt="">
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="stories-caption px-3">
-                            <h1 class="title">Tipsy in Jeju</h1>
-                            <h6 class="genre">Romance</h6>
-                            <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                            <div class="data">
-                                <h5><i class="fas fa-eye"></i> 5.1M</h5>
+                
+
+                @if ($featured_books->count() > 0)
+                    
+                    @foreach ($featured_books as $key => $books)
+                        <div class="row bg-lightpink py-5 justify-content-lg-center mt-3">
+                            <div class="col-sm-3">
+                                <img class="d-block w-100 stories-book-cover p-10" src="{{asset('/img/book-cover') .'/'. $books->cover}}" alt="">
                             </div>
-                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio, ipsam et quos cum aut odit atque quis, voluptatem modi ad possimus nisi maxime, illo nulla fugit excepturi incidunt quod.</p>
-                            <a href="#" class="btn rounded-10 bg-maroon text-white">Start Reading</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row bg-lightpink py-5 justify-content-lg-center mt-3">
-                    <div class="col-sm-3">
-                        <img class="d-block w-100 stories-book-cover p-10" src="{{asset('')}}img/book cover/placeholder1.jpg" alt="">
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="stories-caption px-3">
-                            <h1 class="title">Tipsy in Jeju</h1>
-                            <h6 class="genre">Romance</h6>
-                            <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                            <div class="data">
-                                <h5><i class="fas fa-eye"></i> 5.1M</h5>
+                            <div class="col-sm-7">
+                                <div class="stories-caption px-3">
+                                    <h1 class="title">{{$books->title}}</h1>
+                                    <h6 class="genre">{{$books->genre}}</h6>
+                                    <div class="star-ratings-css">
+                                    <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                    <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                    
+                                </div>
+                                    <div class="data">
+                                        <h5><i class="fas fa-eye"></i> 5.1M</h5>
+                                    </div>
+                                    <div class="description">
+                                        @php
+                                            $str = $books->description;
+                                            echo html_entity_decode($str, ENT_QUOTES); // Converts double and single quotes
+                                        @endphp
+                                    </div>
+                                    <a href="{{route('book.show', $books->id)}}" class="btn rounded-10 bg-maroon text-white">Start Reading</a>
+                                </div>
                             </div>
-                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio, ipsam et quos cum aut odit atque quis, voluptatem modi ad possimus nisi maxime, illo nulla fugit excepturi incidunt quod.</p>
-                            <a href="#" class="btn rounded-10 bg-maroon text-white">Start Reading</a>
                         </div>
-                    </div>
-                </div>
-                <div class="row bg-lightpink py-5 justify-content-lg-center mt-3">
-                    <div class="col-sm-3">
-                        <img class="d-block w-100 stories-book-cover p-10" src="{{asset('')}}img/book cover/placeholder1.jpg" alt="">
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="stories-caption px-3">
-                            <h1 class="title">Tipsy in Jeju</h1>
-                            <h6 class="genre">Romance</h6>
-                            <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                            <div class="data">
-                                <h5><i class="fas fa-eye"></i> 5.1M</h5>
-                            </div>
-                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio, ipsam et quos cum aut odit atque quis, voluptatem modi ad possimus nisi maxime, illo nulla fugit excepturi incidunt quod.</p>
-                            <a href="#" class="btn rounded-10 bg-maroon text-white">Start Reading</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row bg-lightpink py-5 justify-content-lg-center mt-3">
-                    <div class="col-sm-3">
-                        <img class="d-block w-100 stories-book-cover p-10" src="{{asset('')}}img/book cover/placeholder1.jpg" alt="">
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="stories-caption px-3">
-                            <h1 class="title">Tipsy in Jeju</h1>
-                            <h6 class="genre">Romance</h6>
-                            <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                            <div class="data">
-                                <h5><i class="fas fa-eye"></i> 5.1M</h5>
-                            </div>
-                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio, ipsam et quos cum aut odit atque quis, voluptatem modi ad possimus nisi maxime, illo nulla fugit excepturi incidunt quod.</p>
-                            <a href="#" class="btn rounded-10 bg-maroon text-white">Start Reading</a>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
+                
             </div>
         </div>
     </div>
@@ -196,126 +153,35 @@
             <div class="row justify-content-md-center">
                 <div class="col-sm-12">
                     <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
-                            alt="First slide">
-                            <div class="stories-caption py-3">
-                                <h3 class="title text-white">Tipsy in Jeju</h3>
-                                <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                                <div class="data">
-                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+
+                        @if ($latest_release->count() > 0)
+                    
+                            @foreach ($latest_release as $latest)
+                                
+                                <div class="item">
+                                    
+                                    <a href="{{route('book.show', $latest->id)}}">
+                                        <img class="d-block w-100" src="{{asset('/img/book-cover') .'/'. $latest->cover}}"
+                                    alt="{{$latest->title}} Book Cover">
+                                    </a>
+                                    <div class="stories-caption py-3">
+                                        <a href="{{route('book.show', $latest->id)}}">
+                                            <h3 class="title text-white capitalize">{{$latest->title}}</h3>
+                                        </a>
+                                        
+                                        <div class="star-ratings-css">
+                                            {{-- <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                        <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div> --}}
+                                        
+                                        </div>
+                                        {{-- <div class="data">
+                                            <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
+                                        </div> --}}
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
-                            alt="First slide">
-                            <div class="stories-caption py-3">
-                                <h3 class="title text-white">Tipsy in Jeju</h3>
-                                <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                                <div class="data">
-                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
-                            alt="First slide">
-                            <div class="stories-caption py-3">
-                                <h3 class="title text-white">Tipsy in Jeju</h3>
-                                <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                                <div class="data">
-                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
-                            alt="First slide">
-                            <div class="stories-caption py-3">
-                                <h3 class="title text-white">Tipsy in Jeju</h3>
-                                <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                                <div class="data">
-                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
-                            alt="First slide">
-                            <div class="stories-caption py-3">
-                                <h3 class="title text-white">Tipsy in Jeju</h3>
-                                <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                                <div class="data">
-                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
-                            alt="First slide">
-                            <div class="stories-caption py-3">
-                                <h3 class="title text-white">Tipsy in Jeju</h3>
-                                <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                                <div class="data">
-                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
-                            alt="First slide">
-                            <div class="stories-caption py-3">
-                                <h3 class="title text-white">Tipsy in Jeju</h3>
-                                <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                                <div class="data">
-                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="d-block w-100" src="{{asset('')}}img/book cover/placeholder1.jpg"
-                            alt="First slide">
-                            <div class="stories-caption py-3">
-                                <h3 class="title text-white">Tipsy in Jeju</h3>
-                                <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                                <div class="data">
-                                    <h6 class="text-white"><i class="fas fa-eye"></i> 5.1M</h6>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        
+                        @endif
                         
                     </div>
                 </div>
@@ -323,13 +189,44 @@
             
         </div>
     </div>
-    
+
+
+    <div
+    class="modal fade"
+    id="advertisement"
+    tabindex="-1"
+    aria-labelledby="advertisementLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="advertisementLabel">Join Us!</h5>
+            
+        </div>
+        <div class="modal-body">
+            <h5>Join me on Tiktok, Dreame, and PKS Phones. Win books of your choice, Gcash, Cellphone Load, and Stallion Gift Pack.</h5>
+            <img class="img-responsive" src="{{asset('img/advertisement/sofia_ads.jpg')}}" alt="">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Dismis
+            </button>
+            <a type="button" class="btn btn-primary bg-maroon" target="_blank" href="https://www.facebook.com/SofiaPHRPage/posts/3590293964351365">
+                Read More
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
     
     @section('scripts')
         <script src="{{asset('')}}plugins/owl/owlcarousel/owl.carousel.js"></script>
         <script>
             $('.owl-carousel').owlCarousel({
-                loop:true,
+                @if ($latest_release->count() > 5)
+                    loop:true,
+                @endif
                 margin:10,
                 nav:true,
                 navText:["<div class='nav-btn prev-slide'><i class='fas fa-angle-left'></i></div>","<div class='nav-btn next-slide'><i class='fas fa-angle-right'></i></div>"],
@@ -345,6 +242,24 @@
                     }
                 }
             })
+        </script>
+        
+        <script>
+            $("[data-value]").each(function(){
+                var words = $(this).text().split(",");
+                $(this).text("");
+                for(var i=0; i< words.length; i++){
+                    $(this).append("<span class='badge badge-secondary mr-1 p-2 rounded-pill'>"+words[i]+ ((i< words.length-1) ? ",":"").replace(",", "")+"</span>");
+                    
+                }
+            });
+            
+             
+        </script>
+        <script type="text/javascript">
+            $(window).on('load',function(){
+                $('#advertisement').modal('show');
+            });
         </script>
     @endsection
     

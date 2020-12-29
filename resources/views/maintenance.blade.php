@@ -100,7 +100,44 @@
                             </div>
                             </div>
 
-                            @include('inc.scripts')
+
+                            
+    <div
+    class="modal fade"
+    id="advertisement"
+    tabindex="-1"
+    aria-labelledby="advertisementLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="advertisementLabel">Join Us!</h5>
+            
+        </div>
+        <div class="modal-body">
+            <h5>Join me on Tiktok, Dreame, and PKS Phones. Win books of your choice, Gcash, Cellphone Load, and Stallion Gift Pack.</h5>
+            <img class="img-responsive" src="{{asset('img/advertisement/sofia_ads.jpg')}}" alt="">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Dismis
+            </button>
+            <a type="button" class="btn btn-primary bg-maroon" target="_blank" href="https://www.facebook.com/SofiaPHRPage/posts/3590293964351365">
+                Read More
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
+
+                        @include('inc.scripts')
+                        
+        <script type="text/javascript">
+            $(window).on('load',function(){
+                $('#advertisement').modal('show');
+            });
+        </script>
 
 </body>
 </html>

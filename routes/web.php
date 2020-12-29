@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\PageController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,9 +23,12 @@ Route::get('/', function () {
     return view('maintenance');
 })->name('maintenance');
 
-Route::get('/home', function () {
-    return view('guest.home');
-})->name('home');
+// Route::get('/home', function () {
+//     return view('guest.home');
+// })->name('home');
+
+
+Route::get('/home', [PageController::class, 'home'])->name('home');
 
 Route::get('/about', function () {
     return view('guest.aboutme');
@@ -38,9 +42,10 @@ Route::get('/stand-alone', function () {
     return view('guest.standalone');
 })->name('standalone');
 
-Route::get('/series', function () {
-    return view('guest.series');
-})->name('series');
+Route::get('/series', [PageController::class, 'series'])->name('series');
+// Route::get('/series', function () {
+//     return view('guest.series');
+// })->name('series');
 
 Route::get('/travel-and-leisure', function () {
     return view('guest.travel_and_leisure');
@@ -71,18 +76,12 @@ Route::get('/contact', function () {
 
 
 
-Route::get('/story-list', function () {
-    return view('writer.story-list');
-})->name('story-list');
-
-Route::get('/Add-new-book', function () {
-    return view('writer.create-book');
-})->name('create-new-book');
+// Route::get('/chapter', function () {
+//     return view('guest.single_chapter');
+// })->name('single-chapter');
 
 
-Route::get('/Add-new-chapter', function () {
-    return view('writer.create-new-chapter');
-})->name('create-new-chapter');
+// Route::get('/chapter/{$id}', [ChapterController::class, 'store'])->name('single-chapter');
 
 // Route::resource('story_list', 'StoryController', [
 //     'names' => [
@@ -107,32 +106,32 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 
-Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
+// Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
 
-    // return ('admin');
-//     // $user = Auth::user();
+//     // return ('admin');
+// //     // $user = Auth::user();
     
-        Route::resource('/story-list', StoryController::class, [
-            'names' => [
-                'index' => 'book.list',
-                'create' => 'book.create',
-                'show' => 'book.show',
-                'edit' => 'book.edit',
-                'update' => 'book.update',
-            ]
-        ]);
-        Route::post('/courses/store', [StoryController::class, 'store'])->name('book.store');
-        
-        
-        Route::resource('/chapter-list', ChapterController::class, [
-            'names' => [
-                'index' => 'chapter.list',
-                'create' => 'chapter.create',  
-                'show' => 'chapter.show' 
-            ]
-        ]);
-        Route::post('/chapter/store', [ChapterController::class, 'store'])->name('chapter.store');
     
-});
+// });
+
+Route::resource('/Book', StoryController::class, [
+    'names' => [
+        'index' => 'book.list',
+        'create' => 'book.create',
+        'show' => 'book.show',
+        'edit' => 'book.edit',
+        'update' => 'book.update',
+    ]
+]);
+Route::post('/courses/store', [StoryController::class, 'store'])->name('book.store');
+
+Route::resource('/story', ChapterController::class, [
+    'names' => [
+        'index' => 'chapter.list',
+        'create' => 'chapter.create',  
+        'show' => 'chapter.show' 
+    ]
+]);
+Route::post('/chapter/store', [ChapterController::class, 'store'])->name('chapter.store');
 
 

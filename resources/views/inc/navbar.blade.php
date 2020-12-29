@@ -80,12 +80,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
+        <li class="nav-item  @if(\Request::is('home')) active @endif">
           <a class="nav-link hvr-underline-from-left" href="{{route('home')}}">
             <i class="fas fa-home"></i> Home
           </a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item  @if(\Request::is('about') || \Request::is('editors-corner')) active @endif dropdown">
             <a class="nav-link dropdown-toggle hvr-underline-from-left" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <i class="far fa-address-card"></i> About </a>
@@ -94,7 +94,7 @@
               <a class="dropdown-item hvr-underline-from-left" href="{{route('editorscorner')}}">Editor's Corner</a>
             </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item @if(\Request::is('stand-alone') || \Request::is('series')) active @endif dropdown">
               <a class="nav-link dropdown-toggle hvr-underline-from-left" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-book"></i> Stories </a>
