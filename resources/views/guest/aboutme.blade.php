@@ -1,4 +1,11 @@
 <x-guest-layout>
+    @section('styles')
+        <style>
+            .row.justify-content-md-center.my-5 {
+                align-items: center;
+            }
+        </style>
+    @endsection
     <div class="bg-silk py-5">
         
         <div class="container">
