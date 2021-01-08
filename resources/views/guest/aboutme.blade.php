@@ -6,6 +6,8 @@
             }
             .featured-content-holder {
                 position: relative!important;
+                top: 0;
+                transform: none!important;
             }
         </style>
     @endsection
