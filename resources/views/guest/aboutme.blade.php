@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('style')
+    @section('styles')
         <style>
             .row.justify-content-md-center.my-5 {
                 align-items: center;
