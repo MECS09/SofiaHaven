@@ -2,7 +2,7 @@
     <div class="bg-silk py-5">
         
         <div class="container">
-            <div class="row justify-content-md-center">
+            <div class="row justify-content-md-center my-5">
                 <div class="col-md-5">
                     <img class="img-skew-left img-responsive p-2 bg-white box-shadow" src="{{asset('img')}}/aboutme/1.jpg" alt="">
                 </div>
@@ -14,7 +14,7 @@
                     </div> 
                 </div>
             </div>
-            <div class="row justify-content-md-center">
+            <div class="row justify-content-md-center my-5">
                 <div class="col-md-5 relative">
                     <div class="featured-content-holder">
                         
@@ -28,7 +28,7 @@
                     <img class="img-skew-right img-responsive p-2 bg-white box-shadow" src="{{asset('img')}}/aboutme/2.jpg" alt="">
                 </div>
             </div>
-            <div class="row justify-content-md-center">
+            <div class="row justify-content-md-center my-5">
                 <div class="col-md-5 relative">
                     <div class="featured-content-holder">
                         
@@ -44,7 +44,7 @@
                 </div>
             </div>
             
-            <div class="row justify-content-md-center">
+            <div class="row justify-content-md-center my-5">
                 <div class="col-md-5 relative">
                     <div class="featured-content-holder">
                         
