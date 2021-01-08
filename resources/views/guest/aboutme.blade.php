@@ -4,6 +4,9 @@
             .row.justify-content-md-center.my-5 {
                 align-items: center;
             }
+            .featured-content-holder {
+                position: relative!important;
+            }
         </style>
     @endsection
     <div class="bg-silk py-5">
