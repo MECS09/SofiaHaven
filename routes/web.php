@@ -135,7 +135,8 @@ Route::resource('/story', ChapterController::class, [
         'index' => 'chapter.list',
         'create' => 'chapter.create',  
         'show' => 'chapter.show', 
-        'edit' => 'chapter.edit'
+        'edit' => 'chapter.edit',
+        'update' => 'chapter.update'
     ]
 ]);
 Route::post('/chapter/store', [ChapterController::class, 'store'])->name('chapter.store');

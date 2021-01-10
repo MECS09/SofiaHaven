@@ -129,7 +129,33 @@ class ChapterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+
+        $this->validate($request,[
+            'chapter-title' => 'required'
+        ]);
+        
+        $book_story = Book_story::find($id);;
+        $book_story->story_id = $request->input('story_id');
+        $book_story->story_name = $request->input('story_name');
+        $book_story->chapter = $request->input('chapter-title');
+        if($request->has('chapter_cover')){
+            $this->validate($request,[
+                'chapter_cover' => 'required|image|mimes:jpeg,png,PNG,jpg,gif,svg|max:2048'
+            ]);
+            $chapterimage = $_FILES['chapter_cover']['name'] .'_'. auth()->user()->id .'_'. time().'.'.$request->chapter_cover->extension();  
+            $request->chapter_cover->move(public_path('img/book-cover/chapter_cover'), $chapterimage);
+            $book_story->media =  $chapterimage;
+        }
+        $book_story->media_desc = $request->input('chapter-description');
+        $book_story->rated = $request->input('chapter-audience-rate');
+        $book_story->privacy = $request->input('chapter-status');
+        $book_story->content = $request->input('chapter-content');
+
+
+        
+        $book_story->save();
+        return redirect()->route('book.show', $request->input('story_id'))->with('success', 'Chapter Added');
     }
 
     /**

@@ -89,7 +89,9 @@
                         <!-- Uploaded image area-->
                         <p class="font-italic text-center">The image uploaded will be rendered inside the box below.</p>
                         <div class="image-area mt-4"><img id="imageResult" src="{{asset('/img/book-cover'.'/'.$book->cover)}}" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
-                        <!-- Subject -->
+                        
+                        
+                        
                         <label>rated</label>
                         <select class="browser-default custom-select mb-4" name="book-audience-rate">
                             <option value="" disabled>Choose option</option>

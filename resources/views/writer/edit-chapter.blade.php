@@ -43,21 +43,23 @@
 
 
         <div class="container">
-            <h1 class="mt-5 text-center">Create New Chapter!</h1>
+            <h1 class="mt-5 text-center">Edit {{$chapter->chapter}} of {{$chapter->story_name}}</h1>
                     <!-- Default form contact -->
-        <form class="p-5" action="{{route('chapter.update')}}" method="POST"  enctype="multipart/form-data">
+        <form class="p-5" action="{{route('chapter.update',$chapter->story_id)}}" method="POST"  enctype="multipart/form-data">
+            @method('PUT')
             @csrf
             
-            <input type="text" id="Chapter-title" name="story_id" class="form-control mb-4 d-none">
-            <input type="text" id="Chapter-title" name="story_name" class="form-control mb-4 d-none">
+            <input type="text" id="Chapter-title" name="story_id" value="{{$chapter->story_id}}" class="form-control mb-4 d-none">
+            <input type="text" id="Chapter-title" name="story_name" value="{{$chapter->story_name}}" class="form-control mb-4 d-none">
             <!-- Name -->
-            <input type="text" id="Chapter-title" name="chapter-title" class="form-control mb-4" placeholder="Chapter Title">
+            <input type="text" id="Chapter-title" name="chapter-title" value="{{$chapter->chapter}}" class="form-control mb-4" placeholder="Chapter Title">
 
             
             <!-- Upload image input-->
+            <!-- Upload image input-->
             <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-                <input id="upload" type="file" name="chapter-cover" onchange="readURL(this);" class="form-control border-0">
-                <label id="upload-label" for="upload" class="font-weight-light text-muted">Chapter Cover (Optional)</label>
+                <input id="upload" type="file" name="book_cover" onchange="readURL(this);" class="form-control border-0">
+                <label id="upload-label" for="upload" class="font-weight-light text-muted">{{$chapter->media}}</label>
                 <div class="input-group-append">
                     <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
                 </div>
@@ -65,34 +67,48 @@
 
             <!-- Uploaded image area-->
             <p class="font-italic text-center">The image uploaded will be rendered inside the box below.</p>
-            <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
-
+            <div class="image-area mt-4"><img id="imageResult" src="{{asset('/img/book-cover/chapter_cover'.'/'.$chapter->media)}}" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+            
             <label>Chapter Description</label>
             <!-- Name -->
-            <textarea type="text" id="Chapter-description" name="chapter-description" class="ckeditor form-control mb-4" placeholder="Chapter Description"></textarea>
+            <textarea type="text" id="Chapter-description" name="chapter-description" class="ckeditor form-control mb-4" placeholder="Chapter Description">{{$chapter->media_desc}}</textarea>
 
             <!-- Subject -->
             <label class="mt-5">Rated</label>
             <select class="browser-default custom-select mb-4" name="chapter-audience-rate">
                 <option value="" disabled>Choose option</option>
-                <option value="G" selected>G – All ages admitted.</option>
-                <option value="PG-13">PG-13 – Some material may be inappropriate for children under 13.</option>
-                <option value="R">R – Under 17 with precaution.</option>
-                <option value="X">X – No one under 17 admitted.</option>
+                <option value="G" @if ($chapter->rated == 'G')
+                    selected
+                @endif >G – All ages admitted.</option>
+                <option value="PG-13" @if ($chapter->rated == 'PG-13')
+                    selected
+                @endif>PG-13 – Some material may be inappropriate for children under 13.</option>
+                <option value="R" @if ($chapter->rated == 'R')
+                    selected
+                @endif>R – Under 17 with precaution.</option>
+                <option value="X" @if ($chapter->rated == 'X')
+                    selected
+                @endif>X – No one under 17 admitted.</option>
             </select>
 
             <!-- Privacy -->
             <label class="mt-5">Privacy</label>
             <select class="browser-default custom-select mb-4" name="chapter-status">
                 <option value="" disabled>Choose option</option>
-                <option value="public" selected>Public – Everyone can view</option>
-                <option value="draft">Draft – Under Construction</option>
-                <option value="private">Private – Chosen viewer only or Me only</option>
+                <option value="public" @if ($chapter->privacy == 'public')
+                    selected
+                @endif >Public – Everyone can view</option>
+                <option value="draft" @if ($chapter->privacy == 'draft')
+                    selected
+                @endif>Draft – Under Construction</option>
+                <option value="private" @if ($chapter->privacy == 'private')
+                    selected
+                @endif>Private – Chosen viewer only or Me only</option>
             </select>
 
             <label class="mt-5">Chapter Content</label>
             <div class="form-group">
-                <textarea class="form-control rounded-0 ckeditor" name="chapter-content" id="exampleFormControlTextarea2" rows="3" placeholder="content"></textarea>
+                <textarea class="form-control rounded-0 ckeditor" name="chapter-content" id="exampleFormControlTextarea2" rows="3" placeholder="content"> {{$chapter->content}}</textarea>
             </div>
 
             
