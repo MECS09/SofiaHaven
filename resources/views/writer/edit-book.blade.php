@@ -151,6 +151,11 @@
                                 <option value="" disabled selected>Choose option</option>
                                 <option value="0">This is the cover story</option>
                                 {{-- <option value="2" selected>Stallion 2</option> --}}
+                                @if ($series->count() > 0)
+                                    @foreach ($series as $item)
+                                    <option value="{{$item->id}}">{{$item->title}}</option>
+                                @endforeach
+                            @endif
                             </select>
 
                         </div>
