@@ -134,7 +134,7 @@
                             <label>Series Title</label>
                             <select class="browser-default custom-select mb-4" name="series-id" id="type">
                                 <option value="" disabled selected>Choose option</option>
-                                <option value="Cover">This is the cover story</option>
+                                <option value="0">This is the cover story</option>
                                 {{-- <option value="2" selected>Stallion 2</option> --}}
                                 @if ($series->count() > 0)
                                     @foreach ($series as $item)

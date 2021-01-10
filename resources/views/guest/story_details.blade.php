@@ -104,8 +104,8 @@
                                         </a>
                                         <div class="dropdown-menu text-center">
                                             <a href="{{route('chapter.show', $data->id)}}?book={{$book->title}}&chapter={{$data->chapter}}">View</a> <br><br>
-                                            <a href="#">Edit</a><br><br>
-                                            <a href="#">Add New Chapter</a><br><br>
+                                            <a href="{{route('chapter.edit', $data->id)}}">Edit</a><br><br>
+                                            <a href="{{route('chapter.create')}}?book_id={{$book->id}}&book_title={{$book->title}}">Add New Chapter</a><br><br>
                                             <a href="#">Delete</a>
                                         </div>
                                       </div>

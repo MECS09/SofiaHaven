@@ -116,7 +116,7 @@ class ChapterController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('writer.edit-chapter');
     }
 
     /**

@@ -46,7 +46,7 @@
                         
                         
                         <p>I am a fan girl through and through. I love supporting the Philippine Azkals at the local football league. I stan SB19 and I claim Lee Dong Wook, Paulo Avelino and Piolo Pascual as my husbands.</p>
-                        <p>I am also a Youtube vlogger <a href="https://www.youtube.com/c/SofiasHaven?sub_confirmation=1"  target="_blank">(https://www.youtube.com/c/SofiasHaven?sub_confirmation=1)</a>. No niche for now because I just do random stuff. I was pushed by ambitious niece and nephew to be a vlogger. I also want to create my own relaxing music channel <a href="https://www.youtube.com/channel/UCWVfYEokxV37AUvNRUA9XBg" target="_blank">(https://www.youtube.com/channel/UCWVfYEokxV37AUvNRUA9XBg)</a>
+                        <p>I am also a <a href="https://www.youtube.com/c/SofiasHaven?sub_confirmation=1"  target="_blank">Youtube vlogger</a>. No niche for now because I just do random stuff. I was pushed by ambitious niece and nephew to be a vlogger. I also want to create my own relaxing <a href="https://www.youtube.com/channel/UCWVfYEokxV37AUvNRUA9XBg" target="_blank">music channel</a>
                             and audiobook channel. </p>
                     </div> 
                 </div>
@@ -60,9 +60,9 @@
                 <div class="col-md-5 relative">
                     <div class="featured-content-holder">
                         
-                        <p>I am currently working as an editor for Dreame <a href="https://dreame.page.link/FYsgHm33yKjM4krg8">(https://dreame.page.link/FYsgHm33yKjM4krg8)</a>, an online writing platforms for writers who want to earn from their stories. I hope to inspire writers to keep on telling their story and to inspire readers through beautiful stories. You can view the writers under me and a preview of their stories on the Editor's Corner.</p>
+                        <p>I am currently working as an editor for <a href="https://dreame.page.link/FYsgHm33yKjM4krg8">Dreame</a>, an online writing platforms for writers who want to earn from their stories. I hope to inspire writers to keep on telling their story and to inspire readers through beautiful stories. You can view the writers under me and a preview of their stories on the Editor's Corner.</p>
                         <p>I also have my own bookshop - www.shopee.ph/sofiaphr and MY Precious Treasures.</p>
-                        <p>I am part of Team Norte: Akyat For A Cause <a href="https://www.facebook.com/TeamNorte">https://www.facebook.com/TeamNorte</a>, a charity group that collects books and school supplies for kids in Cordillera and Masbate. We would love to reach more remote schools in the future to assist children and school in far-flung places in the country. Most of the volunteers and donors are readers and their friends and associates. Recently, we also became part in helping out the victims of Taal Volcano eruption and Typhoon Ulysses. </p>
+                        <p>I am part of Team Norte: <a href="https://www.facebook.com/TeamNorte">Akyat For A Cause</a>, a charity group that collects books and school supplies for kids in Cordillera and Masbate. We would love to reach more remote schools in the future to assist children and school in far-flung places in the country. Most of the volunteers and donors are readers and their friends and associates. Recently, we also became part in helping out the victims of Taal Volcano eruption and Typhoon Ulysses. </p>
                     </div> 
                 </div>
                 
