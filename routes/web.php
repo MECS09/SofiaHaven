@@ -114,22 +114,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     
 // });
 
-Route::resource('/Book', StoryController::class, [
-    'names' => [
-        'index' => 'book.list',
-        'create' => 'book.create',
-        'show' => 'book.show',
-        'edit' => 'book.edit',
-        'update' => 'book.update',
-    ]
-]);
+
 Route::post('/courses/store', [StoryController::class, 'store'])->name('book.store');
 
 Route::resource('/story', ChapterController::class, [
     'names' => [
         'index' => 'chapter.list',
         'create' => 'chapter.create',  
-        'show' => 'chapter.show' 
+        'show' => 'chapter.show', 
+        'edit' => 'chapter.edit'
     ]
 ]);
 Route::post('/chapter/store', [ChapterController::class, 'store'])->name('chapter.store');
