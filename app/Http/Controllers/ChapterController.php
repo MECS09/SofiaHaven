@@ -155,7 +155,7 @@ class ChapterController extends Controller
 
         
         $book_story->save();
-        return redirect()->route('book.show', $request->input('story_id'))->with('success', 'Chapter Added');
+        return redirect()->route('book.show', $request->input('story_id'))->with('success', 'Chapter Updated');
     }
 
     /**
@@ -166,6 +166,9 @@ class ChapterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $chapter = Book_story::find($id);
+        $chapter->delete();
+
+        return redirect()->back()->with('success','Chapter Deleted');
     }
 }

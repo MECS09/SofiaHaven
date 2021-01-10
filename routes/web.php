@@ -136,9 +136,12 @@ Route::resource('/story', ChapterController::class, [
         'create' => 'chapter.create',  
         'show' => 'chapter.show', 
         'edit' => 'chapter.edit',
-        'update' => 'chapter.update'
+        'update' => 'chapter.update',
     ]
 ]);
+
+Route::get('/chapter/delete/{id}', [ChapterController::class, 'destroy'])->name('chapter.destroy');
+
 Route::post('/chapter/store', [ChapterController::class, 'store'])->name('chapter.store');
 
 
