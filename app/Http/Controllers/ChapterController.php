@@ -129,8 +129,6 @@ class ChapterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-
         $this->validate($request,[
             'chapter-title' => 'required'
         ]);

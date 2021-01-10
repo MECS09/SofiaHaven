@@ -28,7 +28,7 @@ class StoryController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::all()->orderBy('created_at');
         
         
         return view('writer.story-list', compact('books'));

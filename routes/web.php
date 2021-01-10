@@ -127,6 +127,7 @@ Route::resource('/book', StoryController::class, [
 
 Route::get('/series/list/{id}', [StoryController::class, 'series_list'])->name('book.series_list');
 
+Route::get('/book/delete/{id}', [BookController::class, 'destroy'])->name('Book.destroy');
 
 Route::post('/courses/store', [StoryController::class, 'store'])->name('book.store');
 
