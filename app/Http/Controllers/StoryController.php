@@ -111,7 +111,7 @@ class StoryController extends Controller
         $book = Book::find($id);
         // return $book->title;
 
-        $chapter = Book_story::where('story_id', $id)->orderBy('created_at','asc')->get();
+        $chapter = Book_story::where('story_id', $id)->orderedBy('created_at','asc')->get();
         return view('guest.story_details', compact('book','chapter'));
     }
 
