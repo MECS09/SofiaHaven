@@ -186,7 +186,8 @@ class StoryController extends Controller
                 $series_title = null;
             }
             else {
-                $series = Book::where('id', 'series-id')->get();
+                $id =  $request->input('series-id');
+                $series = Book::where('id', $id)->first();
                 $series_title = $series->title;
             }
             $book->series_title = $series_title;
@@ -212,4 +213,12 @@ class StoryController extends Controller
     {
         //
     }
+
+    public function series_list($id)
+    {
+        $book = Book::find($id);
+        $collection = Book::where('series_id', $id)->get();
+        return view('guest.series_list',compact('collection','book'));
+    }
+    
 }

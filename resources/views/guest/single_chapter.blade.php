@@ -8,6 +8,14 @@
         
         <h1 class="text-center capitalize"> {{$chapter->chapter}} </h1>
 
+        <div class="bg-pink p-2">
+            <h3 class="text-white p-1">Authors Note</h3>
+            
+            @php
+                $content_desc = $chapter->media_desc;
+                echo html_entity_decode($content_desc, ENT_QUOTES);
+            @endphp
+        </div>
         <div class="content-wrapper mt-5">
             @php
                 $content = $chapter->content;

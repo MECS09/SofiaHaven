@@ -124,6 +124,9 @@ Route::resource('/book', StoryController::class, [
     ]
 ]);
 
+Route::get('/series/list/{id}', [StoryController::class, 'series_list'])->name('book.series_list');
+
+
 Route::post('/courses/store', [StoryController::class, 'store'])->name('book.store');
 
 Route::resource('/story', ChapterController::class, [

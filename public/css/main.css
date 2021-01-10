@@ -363,6 +363,9 @@ img.img-logo {
 .capitalize {
   text-transform: capitalize;
 }
+.content-wrapper {
+  overflow-wrap: break-word;
+}
 
 @media print {
   html, body {
@@ -374,6 +377,10 @@ img.img-logo {
       top: -14px!important;
       width: 100%!important;
       height: 35px!important;
+  }
+  .book-cover img {
+    height: 417px!important;
+    object-fit: cover;
   }
 }
 
