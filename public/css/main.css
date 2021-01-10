@@ -52,6 +52,7 @@
 .tab-content > .active {
   background: #f6eceb;
   padding: 20px;
+  overflow-wrap: break-word;
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
   border-color: #f6eceb #f6eceb #f6eceb;
