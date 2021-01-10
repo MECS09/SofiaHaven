@@ -29,5 +29,10 @@ class PageController extends Controller
         return view('guest.series', compact('collection'));
     }
 
+    public function stand_alone() {
+        $collection = Book::where('type', 'stand alone')->get();
+
+        return view('guest.series', compact('collection'));
+    }
 
 }

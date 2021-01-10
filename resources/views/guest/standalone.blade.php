@@ -10,150 +10,30 @@
         </div> --}}
         <div class="row">
             
-            <div class="col-md-3 my-5">
-                <a href="#" class="text-dark">
-                    <div class="book-cover">
-                        <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
+            @if ($collection->count() > 0)
+                @foreach ($collection as $item)
+                    <div class="col-md-3 my-5">
+                        <a href="{{route('book.show', $item->id)}}" class="text-dark">
+                            <div class="book-cover">
+                                <img src="{{asset('/img/book-cover') .'/'. $item->cover}}" alt="" class="img-responsive box-shadow">
+                            </div>
+                            <div class="desc text-center">
+                                <h4 class="text-dark pt-4">{{$item->title}}</h4>
+                                <div class="star-ratings-css">
+                                    {{-- <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                    <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                     --}}
+                                </div>
+                                <div class="data">
+                                    <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="desc text-center">
-                        <h4 class="text-dark pt-4">Tipsy in Jeju</h4>
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                        <div class="data">
-                            <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 my-5">
-                <a href="#" class="text-dark">
-                    <div class="book-cover">
-                        <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="desc text-center">
-                        <h4 class="text-dark pt-4">Tipsy in Jeju</h4>
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                        <div class="data">
-                            <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 my-5">
-                <a href="#" class="text-dark">
-                    <div class="book-cover">
-                        <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="desc text-center">
-                        <h4 class="text-dark pt-4">Tipsy in Jeju</h4>
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                        <div class="data">
-                            <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 my-5">
-                <a href="#" class="text-dark">
-                    <div class="book-cover">
-                        <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="desc text-center">
-                        <h4 class="text-dark pt-4">Tipsy in Jeju</h4>
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                        <div class="data">
-                            <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 my-5">
-                <a href="#" class="text-dark">
-                    <div class="book-cover">
-                        <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="desc text-center">
-                        <h4 class="text-dark pt-4">Tipsy in Jeju</h4>
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                        <div class="data">
-                            <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 my-5">
-                <a href="#" class="text-dark">
-                    <div class="book-cover">
-                        <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="desc text-center">
-                        <h4 class="text-dark pt-4">Tipsy in Jeju</h4>
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                        <div class="data">
-                            <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 my-5">
-                <a href="#" class="text-dark">
-                    <div class="book-cover">
-                        <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="desc text-center">
-                        <h4 class="text-dark pt-4">Tipsy in Jeju</h4>
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                        <div class="data">
-                            <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 my-5">
-                <a href="#" class="text-dark">
-                    <div class="book-cover">
-                        <img src="{{asset('img')}}/book cover/placeholder1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="desc text-center">
-                        <h4 class="text-dark pt-4">Tipsy in Jeju</h4>
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            
-                          </div>
-                        <div class="data">
-                            <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                @endforeach
+            @else
+                <h1 class="text-center">No Story Available at the moment</h1>
+            @endif
         </div>
     </div>
 </x-guest-layout>

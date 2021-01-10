@@ -38,11 +38,12 @@ Route::get('/editors-corner', function () {
     return view('guest.editorscorner');
 })->name('editorscorner');
 
-Route::get('/stand-alone', function () {
-    return view('guest.standalone');
-})->name('standalone');
+// Route::get('/stand-alone', function () {
+//     return view('guest.standalone');
+// })->name('standalone');
 
 Route::get('/series', [PageController::class, 'series'])->name('series');
+Route::get('/stand-alone', [PageController::class, 'stand_alone'])->name('standalone');
 // Route::get('/series', function () {
 //     return view('guest.series');
 // })->name('series');
