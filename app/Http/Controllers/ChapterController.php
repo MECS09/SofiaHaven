@@ -116,7 +116,8 @@ class ChapterController extends Controller
      */
     public function edit($id)
     {
-        return view('writer.edit-chapter');
+        $chapter = Book_story::find($id);
+        return view('writer.edit-chapter', compact('chapter'));
     }
 
     /**

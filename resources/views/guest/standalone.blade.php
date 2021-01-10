@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="container mt-5">
-        <h1 class="text-center">Stand Alone</h1>
+        <h1 class="text-center">Stand Alone Stories</h1>
         <hr>
         {{-- <div class="d-flex justify-content-center h-100">
             <div class="searchbar">

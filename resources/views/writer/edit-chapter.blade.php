@@ -45,7 +45,7 @@
         <div class="container">
             <h1 class="mt-5 text-center">Create New Chapter!</h1>
                     <!-- Default form contact -->
-        <form class="p-5" action="{{route('chapter.store')}}" method="POST"  enctype="multipart/form-data">
+        <form class="p-5" action="{{route('chapter.update')}}" method="POST"  enctype="multipart/form-data">
             @csrf
             
             <input type="text" id="Chapter-title" name="story_id" class="form-control mb-4 d-none">
