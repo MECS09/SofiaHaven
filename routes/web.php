@@ -123,6 +123,7 @@ Route::resource('/book', StoryController::class, [
         'update' => 'book.update'
     ]
 ]);
+
 Route::post('/courses/store', [StoryController::class, 'store'])->name('book.store');
 
 Route::resource('/story', ChapterController::class, [
