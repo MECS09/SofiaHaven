@@ -113,7 +113,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     
     
 // });
-
+Route::resource('/book', StoryController::class, [
+    'names' => [
+        'index' => 'book.list',
+        'create' => 'book.create',  
+        'show' => 'book.show', 
+        'edit' => 'book.edit',
+        'update' => 'book.update'
+    ]
+]);
 
 Route::post('/courses/store', [StoryController::class, 'store'])->name('book.store');
 
