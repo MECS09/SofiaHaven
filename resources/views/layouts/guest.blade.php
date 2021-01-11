@@ -39,7 +39,8 @@
 
         @include('inc.navbar')
           
-
+        
+        @include('inc.alert')
         {{ $slot }}
 
 
