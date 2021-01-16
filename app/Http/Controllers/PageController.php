@@ -24,7 +24,7 @@ class PageController extends Controller
     }
     
     public function series() {
-        $collection = Book::where('type', 'series')->get();
+        $collection = Book::where('type', 'series')->where('series_id', 0)->get();
 
         return view('guest.series', compact('collection'));
     }

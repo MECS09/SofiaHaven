@@ -10,7 +10,7 @@
           </div> --}}
         <div class="row">
             <div class="col-md-3 my-5">
-                <a href="{{route('book.series_list', $book->title)}}" class="text-dark">
+                <a href="{{route('book.show', $book->id)}}" class="text-dark">
                     <div class="book-cover">
                         <img src="{{asset('/img/book-cover') .'/'. $book->cover}}" alt="" class="img-responsive box-shadow">
                     </div>
@@ -30,7 +30,7 @@
             @if ($collection->count() > 0)
                 @foreach ($collection as $item)
                     <div class="col-md-3 my-5">
-                        <a href="{{route('book.series_list', $item->id)}}" class="text-dark">
+                        <a href="{{route('book.show', $item->id)}}" class="text-dark">
                             <div class="book-cover">
                                 <img src="{{asset('/img/book-cover') .'/'. $item->cover}}" alt="" class="img-responsive box-shadow">
                             </div>
