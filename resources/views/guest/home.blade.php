@@ -31,10 +31,13 @@
                                     
                                     <div class="text-center">
                                         <h1 class="title">{{$books->title}}</h1>
-                                        @php
-                                            $str = $books->description;
-                                            echo html_entity_decode($str, ENT_QUOTES); // Converts double and single quotes
-                                        @endphp
+                                        
+                                        <div class="ellipsis content-wrapper">
+                                            @php
+                                                $str = $books->description;
+                                                echo html_entity_decode($str, ENT_QUOTES); // Converts double and single quotes
+                                            @endphp
+                                        </div>
                                         <h6 class="genre" data-value>{{$books->genre}}</h6>
 
                                     

@@ -367,6 +367,19 @@ img.img-logo {
 .content-wrapper {
   overflow-wrap: break-word;
 }
+.ellipsis { 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  -webkit-box-orient: vertical; 
+}
+.ellipsis::after {
+  content: "...";
+  position: absolute;
+  right: -12px; 
+  bottom: 4px;
+}
 
 @media print {
   html, body {
