@@ -99,7 +99,7 @@
                 <div class="col-sm-10 text-center relative">
                     <div class="welcome-note p-5 ">
                         <h1>Hi this is <i>Sofia</i></h1>
-                        <p>Welcome to so Sofia The Romatic Traveler</p>
+                        <p>Welcome to Sofia The Romatic Traveler</p>
                         {{-- <a href="#" class="btn rounded-10 bg-maroon text-white">Start Reading</a> --}}
                     </div>
                 </div>
@@ -125,15 +125,15 @@
                                 <div class="stories-caption px-3">
                                     <h1 class="title">{{$books->title}}</h1>
                                     <h6 class="genre">{{$books->genre}}</h6>
-                                    <div class="star-ratings-css">
-                                    <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                    <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                    
-                                </div>
+                                    {{-- <div class="star-ratings-css">
+                                        <div class="star-ratings-css-top" style="width: 93%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                        <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                        
+                                    </div>
                                     <div class="data">
                                         <h5><i class="fas fa-eye"></i> 5.1M</h5>
-                                    </div>
-                                    <div class="description">
+                                    </div> --}}
+                                    <div class="description ellipsis">
                                         @php
                                             $str = $books->description;
                                             echo html_entity_decode($str, ENT_QUOTES); // Converts double and single quotes
