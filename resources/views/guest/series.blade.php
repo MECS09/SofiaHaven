@@ -24,9 +24,9 @@
                                     <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                                      --}}
                                 </div>
-                                <div class="data">
+                                {{-- <div class="data">
                                     <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                                </div>
+                                </div> --}}
                             </div>
                         </a>
                     </div>

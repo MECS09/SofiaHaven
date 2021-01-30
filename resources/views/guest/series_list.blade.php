@@ -17,13 +17,13 @@
                     <div class="desc text-center">
                         <h4 class="text-dark pt-4">{{$book->title}}</h4>
                         
-                        <div class="data">
+                        {{-- <div class="data">
                             <h6 class="text-dark"><i class="fas fa-eye"></i> 5.1M | <i class="fas fa-layer-group"></i> 100 </h6>
-                        </div>
+                        </div> --}}
                     </div>
                 </a>
             </div>
-            @if ($collection->count() > 1)
+            @if ($collection->count() > 0)
                 @foreach ($collection as $item)
                     <div class="col-md-3 my-5">
                         <a href="{{route('book.show', $item->id)}}" class="text-dark">
