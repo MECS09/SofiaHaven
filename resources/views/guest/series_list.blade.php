@@ -44,8 +44,8 @@
                         </a>
                     </div>
                 @endforeach
-            @else
-                <h1 class="text-center">No series Story for a moment</h1>
+            {{-- @else
+                <h1 class="text-center">No series Story for a moment</h1> --}}
             @endif
 
 
