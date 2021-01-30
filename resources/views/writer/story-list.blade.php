@@ -47,7 +47,7 @@
                                         <td class="align-middle">{{$author->name}}</td>
                                         <td class="align-middle">{{$book->rated}}</td>
                                         <td class="align-middle">{{$book->privacy}}</td>
-                                        <td class="align-middle">{{$book->status}}</td>
+                                        <td class="align-middle"></td>
                                         <td class="align-middle">{{$book->type}}</td>
                                         <td class="align-middle" class="text-center">
                                             <a href="{{route('book.show', $book->id)}}" class="btn btn-primary  btn-block">View</a> <br><br>
