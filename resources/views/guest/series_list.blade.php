@@ -23,7 +23,7 @@
                     </div>
                 </a>
             </div>
-            @if ($collection->count() > 0)
+            @if ($collection->count() > 1)
                 @foreach ($collection as $item)
                     <div class="col-md-3 my-5">
                         <a href="{{route('book.show', $item->id)}}" class="text-dark">
