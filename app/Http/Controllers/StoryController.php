@@ -125,7 +125,7 @@ class StoryController extends Controller
     {
         $book = Book::find($id);
         
-        $series = Book::where('type', 'series')->where('series_id', 0)->get();
+        $series = Book::where('type', 'series')->where('series_id', 0)->orderby('asc')->get();
         return view('writer.edit-book', compact('book','series'));
     }
 
