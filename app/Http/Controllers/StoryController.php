@@ -41,7 +41,7 @@ class StoryController extends Controller
      */
     public function create()
     {
-        $series = Book::where('type', 'series')->get();
+        $series = Book::where('type', 'series')->where('series_id', 0)->get();
         return view('writer.create-book', compact('series'));
     }
 
@@ -125,7 +125,7 @@ class StoryController extends Controller
     {
         $book = Book::find($id);
         
-        $series = Book::where('type', 'series')->get();
+        $series = Book::where('type', 'series')->where('series_id', 0)->get();
         return view('writer.edit-book', compact('book','series'));
     }
 
