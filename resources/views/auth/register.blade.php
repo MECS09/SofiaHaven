@@ -33,6 +33,11 @@
                         </div>
             
                         <div class="mt-4">
+                            <x-jet-label value="{{ __('Username') }}" />
+                            <x-jet-input class="block form-control b-maroon" type="text" name="username" :value="old('username')" required />
+                        </div>
+
+                        <div class="mt-4">
                             <x-jet-label value="{{ __('Email') }}" />
                             <x-jet-input class="block form-control b-maroon" type="email" name="email" :value="old('email')" required />
                         </div>
