@@ -9,7 +9,8 @@
             </div>
           </div> --}}
 
-            @if ($writers->count() > 0)
+            <div class="row">
+                @if ($writers->count() > 0)
                 @foreach ($writers as $user)
                     <div class="col-md-3 my-5">
                         <div class="profile-block">
@@ -67,6 +68,7 @@
                 <h1 class="text-center">No series Story for a moment</h1> --}}
             @endif
 
+            </div>
 
 
             
