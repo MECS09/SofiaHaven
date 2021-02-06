@@ -17,10 +17,10 @@
         </div> --}}
         <ul class="nav nav-pills mb-3  nav-justified" id="pills-tab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="pills-series-tab" data-toggle="pill" href="#pills-series" role="tab" aria-controls="pills-series" aria-selected="true">series</a>
+              <a class="nav-link active" id="pills-series-tab" data-toggle="pill" href="#pills-series" role="tab" aria-controls="pills-series" aria-selected="true">Series</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="pills-standalone-tab" data-toggle="pill" href="#pills-standalone" role="tab" aria-controls="pills-standalone" aria-selected="false">standalone</a>
+              <a class="nav-link" id="pills-standalone-tab" data-toggle="pill" href="#pills-standalone" role="tab" aria-controls="pills-standalone" aria-selected="false">Stand Alone</a>
             </li>
           </ul>
 
