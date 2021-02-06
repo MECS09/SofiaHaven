@@ -28,7 +28,7 @@ class StoryController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::where('author', auth()->user()->id)->get();
         
         
         return view('writer.story-list', compact('books'));
@@ -125,7 +125,7 @@ class StoryController extends Controller
     {
         $book = Book::find($id);
         
-        $series = Book::where('type', 'series')->where('series_id', 0)->orderby('title', 'asc')->get();
+        $series = Book::where('type', 'series')->where('series_id', 0)->where('author', Auth()->user()->id)->orderby('title', 'asc')->get();
         return view('writer.edit-book', compact('book','series'));
     }
 

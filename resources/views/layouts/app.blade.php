@@ -39,7 +39,7 @@
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main class=" bg-silk" style="min-height: 100vh;">
                 {{ $slot }}
             </main>
         </div>

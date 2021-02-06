@@ -44,6 +44,11 @@ Route::get('/editors-corner', function () {
 
 Route::get('/series', [PageController::class, 'series'])->name('series');
 Route::get('/stand-alone', [PageController::class, 'stand_alone'])->name('standalone');
+Route::get('/guest-writer', [PageController::class, 'guest_writer'])->name('guestwriter');
+Route::get('/guest-writer/{id}', [PageController::class, 'writer_collection'])->name('writer_collection');
+
+
+
 // Route::get('/series', function () {
 //     return view('guest.series');
 // })->name('series');
@@ -95,6 +100,10 @@ Route::get('/contact', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     
     if(auth()->user()->accesslevel=='admin') {
+        // if user is not an admin they dont have access to the dashboard instead they will redirected to certain page/view that would be their dashboard
+        return view('dashboard');
+    }
+    if(auth()->user()->accesslevel=='writer') {
         // if user is not an admin they dont have access to the dashboard instead they will redirected to certain page/view that would be their dashboard
         return view('dashboard');
     }

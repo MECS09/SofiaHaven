@@ -53,11 +53,11 @@
                             {{ __('Profile') }}
                         </x-jet-dropdown-link>
 
-                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                        {{-- @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                 {{ __('API Tokens') }}
                             </x-jet-dropdown-link>
-                        @endif
+                        @endif --}}
 
                         <div class="border-t border-gray-100"></div>
 
