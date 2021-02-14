@@ -27,7 +27,7 @@ class UserRoleController extends Controller
         $user = User::find($id);
         $user->accesslevel = 'user';
         $user->save();
-        return redirect()->route('user.list')->with('success', 'Blog Successfully Added');
+        return redirect()->route('user.list')->with('success', 'User Successfully Updated');
         
         }
         else {
@@ -40,7 +40,7 @@ class UserRoleController extends Controller
         $writer = User::find($id);
         $writer->accesslevel = 'writer';
         $writer->save();
-        return redirect()->route('user.list')->with('success', 'Blog Successfully Added');
+        return redirect()->route('user.list')->with('success', 'User Successfully Updated');
         }
         else {
             return redirect()->back();
