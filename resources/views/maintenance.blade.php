@@ -79,7 +79,7 @@
         </div>
 
 <!-- Modal -->
-                    <div class="modal fade center" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade center" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -103,7 +103,7 @@
 
 
                             
-    <div
+    {{-- <div
     class="modal fade"
     id="advertisement"
     tabindex="-1"
@@ -130,15 +130,15 @@
         </div>
         </div>
     </div>
-    </div>
+    </div> --}}
 
                         @include('inc.scripts')
                         
-        <script type="text/javascript">
+        {{-- <script type="text/javascript">
             $(window).on('load',function(){
                 $('#advertisement').modal('show');
             });
-        </script>
+        </script> --}}
 
 </body>
 </html>

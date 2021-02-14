@@ -55,7 +55,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     @include('inc.alert')
-                    <h1 class="mt-5 text-center">Create New Book!</h1>
+                    <h1 class="mt-5 text-center">Edit {{$book->title}} Book!</h1>
                     <!-- Default form contact -->
             
                     <form class="p-5" action="{{route('book.update', $book->id)}}" method="POST" enctype="multipart/form-data">

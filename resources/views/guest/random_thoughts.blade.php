@@ -12,87 +12,53 @@
               Sofia's latest Post 
             </div>
             <div class="card-body">
-                <div class="row border-bottom py-3">
-                    <div class="col-sm-4">
-                        <img src="{{asset('img')}}/blog/blog1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="col-sm-8 pt-lg-1 pt-sm-1  pt-5 ">
-                        <h6 class="category mb-3">Random Thoughts</h6>
-                        <h2>Lorem Ipsum Something</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod eius voluptatum repellendus at esse praesentium ex incidunt quo? Modi debitis repellat laborum aspernatur optio qui inventore esse nesciunt natus in!</p>
-                        <div class="blog-desc pt-3">
-                            <div class="row justify-content-center relative">
-                                <div class="col-sm-4 text-center">
-                                    <a href="#">
-                                        <img src="{{asset('img')}}/user_profile-img/user-placeholder.jpg" alt="" class="blog-author-thumb px-1">
-                                    Sofia's Haven
-                                    </a>
+                @if($blog->count() < 1)
+                    <h1 class="text-center">No Blog for Random Thoughts at the moment</h1>
+                @else
+                    @foreach ($blog as $item)
+                        <div class="row border-bottom py-3">
+                            <div class="col-sm-4">
+                                <img src="{{asset('img/blog-cover/'. $item->cover_image)}}" alt="" class="img-responsive box-shadow">
+                            </div>
+                            <div class="col-sm-8 pt-lg-1 pt-sm-1  pt-5 ">
+                                <h6 class="category mb-3">{{$item->category}}</h6>
+                                <a href="{{route('blog.show',$item->id)}}"><h2>{{$item->title}}</h2></a>
+                                
+                                <div class="ellipsis content-wrapper">
+                                @php
+                                    $content_desc = $item->content;
+                                    echo strip_tags($content_desc);
+                                @endphp
                                 </div>
-                                <div class="col-sm-3 text-center">
-                                    <span class="fas fa-comment px-1"></span>
-                                    50
+                                <div class="blog-desc pt-3">
+                                    <div class="row justify-content-center relative">
+                                        <div class="col-sm-4 text-center">
+                                            <a href="#">
+                                                <img src="{{asset('img')}}/user_profile-img/user-placeholder.jpg" alt="" class="blog-author-thumb px-1">
+                                                @php
+                                                    $author = DB::table('users')->where('id',$item->author)->first();
+                                                @endphp
+                                                {{$author->name}}
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-3 text-center">
+                                            <span class="fas fa-comment px-1"></span>
+                                            50
+                                        </div>
+                                        <div class="col-sm-5 text-center">
+                                            <span class="fas fa-calendar-alt px-1"></span>
+                                            @php
+                                                $date = date('F d, Y', strtotime($item->created_at));
+                                            @endphp
+                                            {{$date}}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-sm-5 text-center">
-                                    <span class="fas fa-calendar-alt px-1"></span>
-                                    October 1, 2020</div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row border-bottom py-3">
-                    <div class="col-sm-4">
-                        <img src="{{asset('img')}}/blog/blog1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="col-sm-8 pt-lg-1 pt-sm-1  pt-5 ">
-                        <h6 class="category mb-3">Random Thoughts</h6>
-                        <h2>Lorem Ipsum Something</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod eius voluptatum repellendus at esse praesentium ex incidunt quo? Modi debitis repellat laborum aspernatur optio qui inventore esse nesciunt natus in!</p>
-                        <div class="blog-desc pt-3">
-                            <div class="row justify-content-center relative">
-                                <div class="col-sm-4 text-center">
-                                    <a href="#">
-                                        <img src="{{asset('img')}}/user_profile-img/user-placeholder.jpg" alt="" class="blog-author-thumb px-1">
-                                    Sofia's Haven
-                                    </a>
-                                </div>
-                                <div class="col-sm-3 text-center">
-                                    <span class="fas fa-comment px-1"></span>
-                                    50
-                                </div>
-                                <div class="col-sm-5 text-center">
-                                    <span class="fas fa-calendar-alt px-1"></span>
-                                    October 1, 2020</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row border-bottom py-3">
-                    <div class="col-sm-4">
-                        <img src="{{asset('img')}}/blog/blog1.jpg" alt="" class="img-responsive box-shadow">
-                    </div>
-                    <div class="col-sm-8 pt-lg-1 pt-sm-1  pt-5 ">
-                        <h6 class="category mb-3">Random Thoughts</h6>
-                        <h2>Lorem Ipsum Something</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod eius voluptatum repellendus at esse praesentium ex incidunt quo? Modi debitis repellat laborum aspernatur optio qui inventore esse nesciunt natus in!</p>
-                        <div class="blog-desc pt-3">
-                            <div class="row justify-content-center relative">
-                                <div class="col-sm-4 text-center">
-                                    <a href="#">
-                                        <img src="{{asset('img')}}/user_profile-img/user-placeholder.jpg" alt="" class="blog-author-thumb px-1">
-                                    Sofia's Haven
-                                    </a>
-                                </div>
-                                <div class="col-sm-3 text-center">
-                                    <span class="fas fa-comment px-1"></span>
-                                    50
-                                </div>
-                                <div class="col-sm-5 text-center">
-                                    <span class="fas fa-calendar-alt px-1"></span>
-                                    October 1, 2020</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
+                
             </div>
           </div>
         </div>

@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserRoleController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,33 +49,13 @@ Route::get('/stand-alone', [PageController::class, 'stand_alone'])->name('standa
 Route::get('/guest-writer', [PageController::class, 'guest_writer'])->name('guestwriter');
 Route::get('/guest-writer/{id}', [PageController::class, 'writer_collection'])->name('writer_collection');
 
+Route::get('/travel-and-leisure', [BlogController::class, 'travel_and_leisure'])->name('travel-and-leisure');
 
+Route::get('/how-to-earn', [BlogController::class, 'howtoearn'])->name('how-to-earn');
+Route::get('/events', [BlogController::class, 'events'])->name('events');
+Route::get('/random-thoughts', [BlogController::class, 'random_thoughts'])->name('random-thoughts');
+Route::get('/writing-tips', [BlogController::class, 'writing_tips'])->name('writing-tips');
 
-// Route::get('/series', function () {
-//     return view('guest.series');
-// })->name('series');
-
-Route::get('/travel-and-leisure', function () {
-    return view('guest.travel_and_leisure');
-})->name('travel-and-leisure');
-
-Route::get('/events', function () {
-    return view('guest.events');
-})->name('events');
-
-Route::get('/random-thoughts', function () {
-    return view('guest.random_thoughts');
-})->name('random-thoughts');
-
-
-Route::get('/writing-tips', function () {
-    return view('guest.writing-tips');
-})->name('writing-tips');
-
-
-Route::get('/how-to-earn', function () {
-    return view('guest.how-to-earn');
-})->name('how-to-earn');
 
 
 Route::get('/contact', function () {
@@ -81,21 +63,6 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
-
-// Route::get('/chapter', function () {
-//     return view('guest.single_chapter');
-// })->name('single-chapter');
-
-
-// Route::get('/chapter/{$id}', [ChapterController::class, 'store'])->name('single-chapter');
-
-// Route::resource('story_list', 'StoryController', [
-//     'names' => [
-//         'index' => 'new_story'
-//     ]
-// ]);
-
-// Route::get('story_list', [StoryController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     
@@ -115,14 +82,22 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
+Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
 
-// Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
-
-//     // return ('admin');
-// //     // $user = Auth::user();
+    Route::resource('/blog-post', BlogController::class, [
+        'names' => [
+            'index' => 'blog.list',
+            'create' => 'blog.create',  
+            'edit' => 'blog.edit',
+            'update' => 'blog.update',
+        ]
+    ]);
     
-    
-// });
+    Route::get('/blog-post/delete/{id}', [BlogController::class, 'destroy'])->name('blog.delete');
+    Route::get('/userrole', [UserRoleController::class, 'index'])->name('user.list');
+    Route::get('/changetowriter/{id}', [UserRoleController::class, 'changetowriter'])->name('user.changetowriter');
+    Route::get('/changetouser/{id}', [UserRoleController::class, 'changetouser'])->name('user.changetouser');
+});
 
 Route::resource('/book', StoryController::class, [
     'names' => [
@@ -133,6 +108,7 @@ Route::resource('/book', StoryController::class, [
         'update' => 'book.update'
     ]
 ]);
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::get('/series/list/{id}', [StoryController::class, 'series_list'])->name('book.series_list');
 

@@ -81,16 +81,14 @@ ul.inline-block li {
 /* Preloader */
 
 #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    /* change if the mask should have another color then white */
-    z-index: 99;
-    /* makes sure it stays on top */
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 99999999;
+}
   
   #status {
     width: 200px;
@@ -327,8 +325,13 @@ background-color: #5b211d;
 .blog-author-thumb {
   width: 15%;
   margin-top: -5%;
+  border-radius: 100%;
 }
-
+.blog-title {
+  background-size: cover;
+  background-position: center center;
+  padding: 100px 0px!important;
+}
 .blog-desc, .blog-desc a, .category {
   color: #56a8ce;
 }

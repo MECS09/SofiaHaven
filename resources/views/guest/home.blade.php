@@ -193,7 +193,7 @@
         </div>
     </div>
 
-
+{{-- 
     <div
     class="modal fade"
     id="advertisement"
@@ -221,7 +221,7 @@
         </div>
         </div>
     </div>
-    </div>
+    </div> --}}
     
     @section('scripts')
         <script src="{{asset('')}}plugins/owl/owlcarousel/owl.carousel.js"></script>
@@ -259,11 +259,11 @@
             
              
         </script>
-        <script type="text/javascript">
+        {{-- <script type="text/javascript">
             $(window).on('load',function(){
                 $('#advertisement').modal('show');
             });
-        </script>
+        </script> --}}
     @endsection
     
 </x-guest-layout>
