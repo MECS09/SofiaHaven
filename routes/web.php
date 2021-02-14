@@ -88,6 +88,7 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
         'names' => [
             'index' => 'blog.list',
             'create' => 'blog.create',  
+            'store' => 'blog.store', 
             'edit' => 'blog.edit',
             'update' => 'blog.update',
         ]
