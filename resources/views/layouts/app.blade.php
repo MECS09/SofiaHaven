@@ -206,7 +206,7 @@
                     </ul>
                       <ul class="sidebar-nav" id="sidebar">     
                         <li><a href="{{route('blog.list')}}">Blog<span class="sub_icon fas fa-book"></span></a></li>
-                        <li><a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+                        <li><a href="{{route('user.list')}}">link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
                       </ul>
                     </div>
                 @endif
