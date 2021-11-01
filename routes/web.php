@@ -4,10 +4,12 @@ use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserRoleController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +57,8 @@ Route::get('/how-to-earn', [BlogController::class, 'howtoearn'])->name('how-to-e
 Route::get('/events', [BlogController::class, 'events'])->name('events');
 Route::get('/random-thoughts', [BlogController::class, 'random_thoughts'])->name('random-thoughts');
 Route::get('/writing-tips', [BlogController::class, 'writing_tips'])->name('writing-tips');
-
+Route::post('/save_comment', [CommentController::class, 'save_comment'])->name('save_comment');
+Route::post('/save_reply', [CommentController::class, 'save_reply'])->name('save_reply');
 
 
 Route::get('/contact', function () {

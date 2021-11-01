@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Book_story;
+use App\Models\Comments;
 use Illuminate\Http\Request;
 
 class ChapterController extends Controller
@@ -102,10 +103,14 @@ class ChapterController extends Controller
         $request->input('book');
         $request->input('chapter');
         $chapter = Book_story::find($id);
+
+        $comment = Comments::where('chapter_id', $chapter->id)->where('comment_id', null)->orderBy('created_at', 'asc')->get();
+        
+        // dd($chapter->id);
         $book_next = Book_story::where('story_id', $chapter->story_id)->where('id', '>', $id)->first();
         $book_prev = Book_story::where('story_id', $chapter->story_id)->where('id', '<', $id)->first();
         // return $book;
-        return view('guest.single_chapter', compact('chapter','book_next','book_prev'));
+        return view('guest.single_chapter', compact('chapter','book_next','book_prev', 'comment'));
     }
 
     /**

@@ -1,6 +1,7 @@
 {{-- styles, meta,head script --}}
 
 <link rel="stylesheet" href="{{asset('')}}plugins/fontawesome/css/all.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('')}}css/bootstrap.css">
 <link rel="stylesheet" href="{{asset('')}}css/mdb.css">
 <link rel="stylesheet" href="{{asset('')}}css/hover.css">

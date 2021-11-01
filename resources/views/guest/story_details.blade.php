@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('styles')
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=602bd0e1ed86720012bd3d6d&product=inline-share-buttons" async="async"></script>
+    @endsection
     <div class="bg-lightpink py-3">
         <div class="container">
             <div class="row justify-center">
@@ -31,6 +34,9 @@
                         @endif
                     </div>
                 </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="sharethis-inline-share-buttons"></div>
             </div>
         </div>
     </div>
