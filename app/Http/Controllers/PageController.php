@@ -54,7 +54,7 @@ class PageController extends Controller
     
     public function writer_collection($id) {
         $user = User::find($id);
-        $collection_standalone = Book::where('author', $id)->where('type', 'standalone')->get();
+        $collection_standalone = Book::where('author', $id)->where('type', 'stand alone')->get();
         $collection_series = Book::where('author', $id)->where('type', 'series')->get();
         return view('guest.writer_collection', compact('collection_standalone', 'collection_series', 'user'));
     }

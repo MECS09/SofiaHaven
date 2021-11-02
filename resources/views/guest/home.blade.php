@@ -208,7 +208,7 @@
                 
             </div>
             <div class="modal-body">
-                <h5>{!! $item->content !!}</h5>
+                {!! $item->content !!}
                 
                 <div class="text-center">
                     <img style="height: 50vh; width: auto;" src="{{asset('img/announcement-cover/')}}/{{$item->image}}" alt="">
