@@ -9,7 +9,7 @@
         </div>
 
         @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600 bg-success">
+            <div class="mb-4 font-medium text-sm text-green-600 bg-success py-2">
                 {{ session('status') }}
             </div>
         @endif
