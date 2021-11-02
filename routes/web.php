@@ -24,16 +24,16 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 */
 
 //TEMPORARY ROUTE FOR MAINTENANCE *************
-Route::get('/', function () {
-    return view('maintenance');
-})->name('maintenance');
+// Route::get('/', function () {
+//     return view('maintenance');
+// })->name('maintenance');
 
 // Route::get('/home', function () {
 //     return view('guest.home');
 // })->name('home');
 
 
-Route::get('/home', [PageController::class, 'home'])->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::get('/about', function () {
     return view('guest.aboutme');
