@@ -59,6 +59,7 @@
                     list-style: none;
                     margin: 0;
                     padding: 0;
+                    font-size: 12px!important;
                 }
                 #page-content-wrapper {
                     padding-left: 0;
@@ -128,6 +129,7 @@
         
                 .sidebar-nav > .sidebar-brand a {
                 color: #fff;
+                font-size: 16px;
                 }
         
                 .sidebar-nav > .sidebar-brand a:hover {
@@ -207,6 +209,7 @@
                       <ul class="sidebar-nav" id="sidebar">     
                         <li><a href="{{route('blog.list')}}">Blog<span class="sub_icon fas fa-book"></span></a></li>
                         <li><a href="{{route('user.list')}}">User Access<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+                        <li><a href="{{route('announcement.list')}}">Announcements<span class="fas fa-newspaper"></span></a></li>
                       </ul>
                     </div>
                 @endif

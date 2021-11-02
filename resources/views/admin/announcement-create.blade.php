@@ -1,0 +1,167 @@
+
+<x-app-layout>
+    @section('styles')
+    <link rel="stylesheet" href="{{asset('css/addons/tagsinput.css')}}">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap2-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<style>
+    
+    #upload {
+        opacity: 0;
+    }
+
+    #upload-label {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+    }
+
+    .image-area {
+        border: 2px dashed rgba(255, 255, 255, 0.7);
+        padding: 1rem;
+        position: relative;
+    }
+
+    .image-area::before {
+        content: 'Uploaded image result';
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.8rem;
+        z-index: 1;
+    }
+
+    .image-area img {
+        z-index: 2;
+        position: relative;
+    }
+
+</style>
+@endsection
+
+
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Create Announcement') }}
+            </h2>
+        </x-slot>
+
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                    @include('inc.alert')
+                    <h1 class="mt-5 text-center">Create New Announcement!</h1>
+                            <!-- Default form contact -->
+                    <form class="p-5" action="{{route('announcement.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <!-- Name -->
+                        <div class="form-group row align-items-center">
+                            <input type="text" id="blog-title" name="blog-title" class="form-control mb-4" placeholder="Title">
+                        </div>
+
+                        
+                        <!-- Upload image input-->
+                        <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                            <input id="upload" type="file" name="blog_cover" onchange="readURL(this);" class="form-control border-0">
+                            <label id="upload-label" for="upload" class="font-weight-light text-muted">Announcement Cover</label>
+                            <div class="input-group-append">
+                                <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                            </div>
+                        </div>
+
+                        <!-- Uploaded image area-->
+                        <p class="font-italic text-center">The image uploaded will be rendered inside the box below.</p>
+                        <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
+                        <!-- Subject -->
+                        <label>Announcement Duration</label>
+                        <div class="row mb-5">
+                            <div class="col-sm-6">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="mr-5">From:</label>
+                                        <input type="date" class="form-control" name="from" id="from">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="mr-5">To:</label>
+                                        <input type="date" class="form-control" name="to" id="to">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <label>Announcement Content (optional)</label>
+                        <div class="form-group">
+                            <textarea class="form-control rounded-0 ckeditor required" name="blog-content" id="exampleFormControlTextarea2" rows="3" placeholder="Content"></textarea>
+                        </div>
+
+                        <label>Link to Announcement</label>
+                        <input type="text" name="link" id="link" placeholder="Link to Event" class="form-control">
+
+                        <!-- Send button -->
+                        
+                        <button class="btn btn-info btn-block mt-5" type="submit">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        
+        @section('scripts')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script src="//cdn.ckeditor.com/4.15.1/full/ckeditor.js"></script>
+        <script src="{{asset('js/addons/tagsinput.js')}}"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.ckeditor').ckeditor();
+            });
+            
+            /*  ==========================================
+                SHOW UPLOADED IMAGE
+            * ========================================== */
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#imageResult')
+                            .attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $(function () {
+                $('#upload').on('change', function () {
+                    readURL(input);
+                });
+            });
+
+            /*  ==========================================
+                SHOW UPLOADED IMAGE NAME
+            * ========================================== */
+            var input = document.getElementById( 'upload' );
+            var infoArea = document.getElementById( 'upload-label' );
+
+            input.addEventListener( 'change', showFileName );
+            function showFileName( event ) {
+            var input = event.srcElement;
+            var fileName = input.files[0].name;
+            infoArea.textContent = 'File name: ' + fileName;
+            }
+        </script>
+        
+        @endsection
+</x-app-layout>

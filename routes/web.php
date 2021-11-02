@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoryController;
@@ -101,6 +102,9 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::get('/userrole', [UserRoleController::class, 'index'])->name('user.list');
     Route::get('/changetowriter/{id}', [UserRoleController::class, 'changetowriter'])->name('user.changetowriter');
     Route::get('/changetouser/{id}', [UserRoleController::class, 'changetouser'])->name('user.changetouser');
+    Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement.list');
+    Route::get('/announcement_create', [AnnouncementController::class, 'create'])->name('announcement.create');
+    Route::post('/announcement_store', [AnnouncementController::class, 'store'])->name('announcement.store');
 });
 
 Route::resource('/book', StoryController::class, [

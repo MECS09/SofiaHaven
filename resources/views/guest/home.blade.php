@@ -193,35 +193,47 @@
         </div>
     </div>
 
-{{-- 
-    <div
-    class="modal fade"
-    id="advertisement"
-    tabindex="-1"
-    aria-labelledby="advertisementLabel"
-    aria-hidden="true"
-    >
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="advertisementLabel">Join Us!</h5>
-            
-        </div>
-        <div class="modal-body">
-            <h5>Join me on Tiktok, Dreame, and PKS Phones. Win books of your choice, Gcash, Cellphone Load, and Stallion Gift Pack.</h5>
-            <img class="img-responsive" src="{{asset('img/advertisement/sofia_ads.jpg')}}" alt="">
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                Dismis
-            </button>
-            <a type="button" class="btn btn-primary bg-maroon" target="_blank" href="https://www.facebook.com/SofiaPHRPage/posts/3590293964351365">
-                Read More
-            </a>
-        </div>
+
+    @foreach ($announcement as $item)
+    
+    <div class="modal fade" id="advertisement{{$item->id}}"
+        tabindex="-1"
+        aria-labelledby="advertisementLabel"
+        aria-hidden="true"
+        >
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="advertisementLabel">{{$item->title}}</h5>
+                
+            </div>
+            <div class="modal-body">
+                <h5>{!! $item->content !!}</h5>
+                
+                <div class="text-center">
+                    <img style="height: 50vh; width: auto;" src="{{asset('img/announcement-cover/')}}/{{$item->image}}" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Dismis
+                </button>
+                <a type="button" class="btn btn-primary bg-maroon" target="_blank" href="{{$item->link}}">
+                    Read More
+                </a>
+            </div>
+            </div>
         </div>
     </div>
-    </div> --}}
+
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#advertisement{{$item->id}}').modal('show');
+        });
+    </script>
+    
+        
+    @endforeach
     
     @section('scripts')
         <script src="{{asset('')}}plugins/owl/owlcarousel/owl.carousel.js"></script>
@@ -256,14 +268,9 @@
                     
                 }
             });
-            
-             
         </script>
-        {{-- <script type="text/javascript">
-            $(window).on('load',function(){
-                $('#advertisement').modal('show');
-            });
-        </script> --}}
+
+        
     @endsection
     
 </x-guest-layout>

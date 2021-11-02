@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\Book;
 use App\Models\User;
 use Illuminate\Http\Request;
+Use \Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -15,12 +17,18 @@ class PageController extends Controller
         if(count($featured_books) < 1) {
             $featured_books = Book::all();
         }
+        $today = date('Y-m-d');
+        $announcement = Announcement::where('start', '<=' ,$today)->where('end', '>=' ,$today)->get();
+        // $announcement = Announcement::where('start', '>=' ,$today)->whereDate('end', '<=' ,$today)->get();
+
+        // return $announcement;
+
 
         $latest_release = Book::orderBy('id', 'desc')->take(10)->get();
 
         // return count($featured_books);
 
-        return view('guest.home', compact('featured_books','latest_release'));
+        return view('guest.home', compact('featured_books','latest_release','announcement'));
 
     }
     
