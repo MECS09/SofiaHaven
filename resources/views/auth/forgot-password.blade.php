@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-auth-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -9,7 +9,7 @@
         </div>
 
         @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
+            <div class="mb-4 font-medium text-sm text-green-600 bg-success">
                 {{ session('status') }}
             </div>
         @endif
@@ -21,11 +21,12 @@
 
             <div class="block">
                 <x-jet-label value="{{ __('Email') }}" />
-                <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <br>
+                <x-jet-input class="block mt-1 w-full text-center form-control" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
+                <x-jet-button class="bg-maroon mb-5">
                     {{ __('Email Password Reset Link') }}
                 </x-jet-button>
             </div>

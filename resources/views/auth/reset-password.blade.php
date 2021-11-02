@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-auth-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -11,23 +11,26 @@
 
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-            <div class="block">
+            <div class="block form-group">
                 <x-jet-label value="{{ __('Email') }}" />
-                <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+                <br>
+                <x-jet-input class="block mt-1 w-full form-control text-center" type="email" name="email" :value="old('email', $request->email)" required autofocus />
             </div>
 
             <div class="mt-4">
                 <x-jet-label value="{{ __('Password') }}" />
-                <x-jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <br>
+                <x-jet-input class="block mt-1 w-full form-control text-center" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
                 <x-jet-label value="{{ __('Confirm Password') }}" />
-                <x-jet-input class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <br>
+                <x-jet-input class="block mt-1 w-full form-control text-center" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
+                <x-jet-button class="bg-maroon mb-5">
                     {{ __('Reset Password') }}
                 </x-jet-button>
             </div>

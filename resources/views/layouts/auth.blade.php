@@ -42,7 +42,9 @@
         </div>
 
 
-        
+        <div class="bg-maroon text-center py-2 text-white mt-5" style="border-top: solid #6e4435 1px">
+            <small>© Sofia Haven Stories {{date('Y')}}. All rights reserved.</small>
+        </div>
         @include('inc.scripts')
         @yield('scripts')
     </body>

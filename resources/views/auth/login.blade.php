@@ -132,7 +132,7 @@
           </div>
         </div>
         </div>
-</form>
+    </form>
 </x-jet-authentication-card>
 
 
