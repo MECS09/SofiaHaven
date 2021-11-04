@@ -5,7 +5,17 @@
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap2-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <style>
-    
+    .content img {
+            width: auto;
+            height: 500px;
+            margin: 0 auto;
+            text-align: center;
+    }
+    @media only screen and (max-width: 600px) {
+        .content img {
+            width: 100%!important;
+        }
+    }
     #upload {
         opacity: 0;
     }
