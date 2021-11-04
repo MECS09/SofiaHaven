@@ -1,4 +1,18 @@
 <x-guest-layout>
+    <style>
+        
+    .content img {
+            width: auto;
+            height: 500px;
+            margin: 0 auto;
+            text-align: center;
+    }
+    @media only screen and (max-width: 600px) {
+        .content img {
+            width: 100%!important;
+        }
+    }
+    </style>
     <div class="blog py-5">
         <div class="container">
 
