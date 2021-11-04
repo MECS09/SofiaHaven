@@ -10,6 +10,7 @@
     @media only screen and (max-width: 600px) {
         .content img {
             width: 100%!important;
+            height: auto!important;
         }
     }
     </style>
