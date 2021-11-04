@@ -1,7 +1,7 @@
 <div class="topbar bg-maroon text-right">
     <ul class="inline-block">
         <li><a class="text-white" href="{{route('guestwriter')}}">Guest Writers and Contributor</a></li>
-        <li><a class="text-white" href="#">Community</a></li>
+        <li><a class="text-white" href="{{route('forum.list')}}">Community</a></li>
         <li>
             <form class="form-inline">
                 <div class="md-form my-0">

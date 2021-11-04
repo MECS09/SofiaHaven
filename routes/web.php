@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserRoleController;
 use App\Models\User;
@@ -138,4 +139,13 @@ Route::get('/chapter/delete/{id}', [ChapterController::class, 'destroy'])->name(
 
 Route::post('/chapter/store', [ChapterController::class, 'store'])->name('chapter.store');
 
+Route::resource('/Community', ForumController::class, [
+    'names' => [
+        'index' => 'forum.list',
+        'create' => 'forum.create',  
+        'store' => 'forum.store', 
+        'edit' => 'forum.edit',
+        'update' => 'forum.update',
+    ]
+]);
 
