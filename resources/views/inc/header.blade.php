@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{asset('')}}css/mdb.css">
 <link rel="stylesheet" href="{{asset('')}}css/hover.css">
 
-<link rel="stylesheet" href="{{asset('')}}css/main.css?v=1.1">
+<link rel="stylesheet" href="{{asset('')}}css/main.css?v=1.2">
 
 <!-- jQuery -->
 <script type="text/javascript" src="{{asset('')}}js/jquery.min.js"></script>
