@@ -7,6 +7,7 @@
             margin: 0 auto;
             text-align: center;
     }
+    
     @media only screen and (max-width: 600px) {
         .content img {
             width: 100%!important;
@@ -30,7 +31,7 @@
                             
                         </div>
                         <div class="row justify-content-center relative">
-                            <div class="col-sm-4 text-center">
+                            {{-- <div class="col-sm-4 text-center">
                                 @auth
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                             <img class="blog-author-thumb px-1" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->fist_name }}" />
@@ -56,7 +57,29 @@
                             </div>
                             <div class="col-sm-5 text-center">
                                 <span class="fas fa-calendar-alt px-1"></span>
-                                October 1, 2020</div>
+                                October 1, 2020
+                            </div> --}}
+
+                            <div class="col-sm-4 text-center">
+                                <a href="#">
+                                    <img src="{{asset('img')}}/user_profile-img/user-placeholder.jpg" alt="" class="blog-author-thumb px-1">
+                                    @php
+                                        $author = DB::table('users')->where('id',$blog->author)->first();
+                                    @endphp
+                                    {{$author->name}}
+                                </a>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="fas fa-comment px-1"></span>
+                                50
+                            </div>
+                            <div class="col-sm-5 text-center">
+                                <span class="fas fa-calendar-alt px-1"></span>
+                                @php
+                                    $date = date('F d, Y', strtotime($blog->created_at));
+                                @endphp
+                                {{$date}}
+                            </div>
                         </div>
                     </div>
                     
